@@ -9,7 +9,7 @@ import { ReactComponent as Arrow } from "../../Assets/Icons/arrow.svg"
 
 const Home = () => {
     return (
-        <div className="home">
+        <div className="home" id="Home">
             <div className="background">
                 <img src={background} alt="Home Background" />
             </div>
@@ -20,14 +20,14 @@ const Home = () => {
                     <h4>Web Designer/Developer</h4>
                 </div>
                 <div className="social-links">
-                    <a href="#"><Facebook /></a>
-                    <a href="#"><Twitter /></a>
-                    <a href="#"><Github /></a>
-                    <a href="#"><Linkedin /></a>
+                    <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook /></a>
+                    <a href="https://twitter.com/__Ghareeeb" target="_blank" rel="noreferrer"><Twitter /></a>
+                    <a href="https://github.com/ghareeb96" target="_blank" rel="noreferrer"><Github /></a>
+                    <a href="https://www.linkedin.com/in/ghareeb-shehata" target="_blank" rel="noreferrer"><Linkedin /></a>
                 </div>
             </div>
             <div className="learn-more">
-                <a href="#">
+                <a href="#About">
                     <Arrow />
                 </a>
             </div>

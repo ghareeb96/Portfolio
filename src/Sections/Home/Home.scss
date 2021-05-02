@@ -1,6 +1,9 @@
 @import "../../mainStyles.scss";
 
 .home {
+
+    position: relative;
+
     .background {
         position: relative;
         width: 100vw;
@@ -13,6 +16,7 @@
             height: 100%;
             object-position: center;
             object-fit: cover;
+
         }
 
         &::after {

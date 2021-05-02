@@ -1,0 +1,68 @@
+@import "../../mainStyles.scss";
+
+
+.about {
+    width: 100%;
+    min-height: 90vh;
+
+    .about-content {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            height: 350px;
+            justify-content: space-between;
+
+
+            .cv {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                button {
+                    background: $primary-color;
+                    border: none;
+                    outline: none;
+                    margin-left: 30px;
+                    border-radius: 2px;
+                    color: $secondary-color;
+                    padding: 8px 12px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+
+                    svg {
+                        fill: $secondary-color;
+                        height: 20px;
+                        width: auto;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .image-section {
+            width: 40%;
+
+            .img-container {
+                width: 250px;
+                height: 400px;
+                margin: auto;
+                box-shadow: 2px 4px 10px;
+                overflow: hidden;
+                border-radius: 3px;
+
+                img {
+                    height: auto;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}
