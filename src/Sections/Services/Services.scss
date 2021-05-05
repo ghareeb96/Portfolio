@@ -1,0 +1,15 @@
+@import "../../mainStyles.scss";
+
+.services {
+    min-height: 100vh;
+    width: 100%;
+
+    .cards-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        justify-items: center;
+        grid-gap: 1rem;
+
+    }
+}
