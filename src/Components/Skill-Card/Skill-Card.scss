@@ -1,0 +1,62 @@
+@import "../../mainStyles.scss";
+
+
+.skill-card {
+    width: 300px;
+    height: 50px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // background: lighten($light-background, 15);
+    // box-shadow: 1px 0px 6px;
+
+    .icon {
+        svg {
+            width: 40px;
+            height: 40px;
+            fill: black;
+        }
+    }
+
+
+    .title-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .title {
+
+            h3 {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+        }
+
+        .progress-bar {
+            width: 250px;
+
+
+            .MuiLinearProgress-colorPrimary {
+                height: 4px;
+                border-radius: 4px;
+                background-color: lighten($light-background, 8);
+            }
+
+            .MuiLinearProgress-barColorPrimary {
+                background-color: $dark-background;
+            }
+
+            .MuiTypography-body2 {
+                font-size: 1rem;
+                font-family: "Raleway";
+                font-weight: 400;
+                color: $secondary-color;
+            }
+        }
+
+    }
+
+}
