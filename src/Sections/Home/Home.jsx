@@ -15,9 +15,9 @@ const Home = () => {
             </div>
             <div className="home-content">
                 <div className="text">
-                    <h4>Hello, Its me</h4>
-                    <h1>Ghareeb Shehata</h1>
-                    <h4>Web Designer/Developer</h4>
+                    <h5>Hello, Its me</h5>
+                    <h2>Ghareeb Shehata</h2>
+                    <h5>Web Designer/Developer</h5>
                 </div>
                 <div className="social-links">
                     <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook /></a>

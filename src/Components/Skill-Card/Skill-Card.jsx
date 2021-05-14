@@ -26,9 +26,9 @@ const SkillCard = ({ data }) => {
             <div className="icon" id={data.id}></div>
             <div className="title-bar">
                 <div className="title">
-                    <h3>
+                    <h6>
                         {data.title}
-                    </h3>
+                    </h6>
 
                 </div>
                 <div className="progress-bar">

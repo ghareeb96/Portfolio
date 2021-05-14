@@ -9,8 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    // background: lighten($light-background, 15);
-    // box-shadow: 1px 0px 6px;
+
 
     .icon {
         svg {
@@ -29,9 +28,9 @@
 
         .title {
 
-            h3 {
-                font-size: 1.2rem;
+            h6 {
                 letter-spacing: 2px;
+                font-weight: 600;
             }
         }
 

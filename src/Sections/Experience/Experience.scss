@@ -1,0 +1,34 @@
+@import "../../mainStyles.scss";
+
+.experience {
+    min-height: 100vh;
+
+    .experience-container {
+        .filter-bar {
+            width: 200px;
+        }
+
+    }
+
+    .timeline-container {
+        width: 100%;
+        height: auto;
+
+        .timeline {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 3px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translate(-50%, 0);
+                background: #000;
+            }
+        }
+    }
+}

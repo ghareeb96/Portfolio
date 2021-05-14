@@ -6,13 +6,10 @@ import Card from "../../Components/Service-card/Card"
 const Services = () => {
     const [servicesData, setServicesData] = useState(data)
 
-
-
-
     return (
         <div className="services" id="Services">
 
-            <h5 className="headline">WHAT CAN I DO</h5>
+            <h6 className="headline">WHAT CAN I DO</h6>
 
             <div className="cards-container">
                 {servicesData.map((service, index) => (

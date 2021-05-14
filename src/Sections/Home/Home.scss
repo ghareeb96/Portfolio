@@ -41,13 +41,17 @@
         justify-content: space-between;
 
         .text {
-            height: 200px;
+            height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
-            h4,
-            h1 {
+            h2 {
+                letter-spacing: 1px;
+            }
+
+            h5 {
+                font-weight: 400;
                 letter-spacing: 1px;
             }
 

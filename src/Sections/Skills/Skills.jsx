@@ -8,9 +8,9 @@ const Skills = () => {
 
     const [skillsData, setSkillsData] = useState(data)
     return (
-        <div className="skills">
+        <div className="skills" id="Skills">
 
-            <h5 className="headline">MY TECHNICAL SKILLS</h5>
+            <h6 className="headline">MY TECHNICAL SKILLS</h6>
 
             <div className="filter-bar">
                 <ul>

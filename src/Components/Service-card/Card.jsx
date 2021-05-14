@@ -29,9 +29,9 @@ const Card = ({ data }) => {
                         </div>
                     </div>
                     <div className="title">
-                        <h3>
+                        <h6>
                             {data.title}
-                        </h3>
+                        </h6>
                     </div>
 
                 </div>
