@@ -1,0 +1,12 @@
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+
+    a:hover {
+        svg {
+            fill: $primary-color;
+        }
+    }
+}

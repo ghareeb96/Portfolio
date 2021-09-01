@@ -5,13 +5,9 @@ const Nav = () => {
     return (
         <header>
             <nav className="navbar">
-                <div className="logo">
-                    <h3>GHAREEB</h3>
-                </div>
                 <div className="navbar-links">
                     <ul>
-                        <li className="nav-link active"><a href="#Home">Home</a></li>
-                        <li className="nav-link"><a href="#About">About</a></li>
+                        <li className="nav-link active"><a href="#About">About</a></li>
                         <li className="nav-link"><a href="#Services">Services</a></li>
                         <li className="nav-link"><a href="#Skills">Skills</a></li>
                         <li className="nav-link"><a href="#Experience">Experience</a></li>

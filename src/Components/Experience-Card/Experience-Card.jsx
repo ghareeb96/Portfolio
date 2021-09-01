@@ -22,7 +22,7 @@ const ExperienceCard = ({ data, pos }) => {
                 <div className="box">
                     <div className="arrow"></div>
 
-                    <div className="organization"><h5>{data.org}</h5></div>
+                    <div className="organization"><h6>{data.org}</h6></div>
                     <div className="position">
                         <h6>{data.position}, ({data.period})</h6>
                     </div>

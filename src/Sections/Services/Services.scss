@@ -1,6 +1,7 @@
-@import "../../mainStyles.scss";
+@import "../../app.scss";
 
 .services {
+    background: $secondary-background-color;
     height: 100vh;
     width: 100%;
     position: relative;
