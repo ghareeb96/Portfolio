@@ -2,90 +2,66 @@
 
 .service-card {
     width: 220px;
-    height: 250px;
-    background-color: transparent;
-    perspective: 1000px;
+    height: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 6px;
+    transition: all 0.2s ease-out;
 
-    &:hover .inner-card {
-        transform: rotateY(180deg) scale(1.1);
 
-    }
+    .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
 
-    .inner-card {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-
-        .front-card,
-        .back-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            box-shadow: 0 0px 6px;
-            border-radius: 3px;
-
-        }
-
-        .front-card {
+        .icon {
+            transition: all 0.2s ease-out;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: space-evenly;
-            text-align: center;
-            padding: 0 15px;
+            justify-content: center;
 
-            .icon-container {
-                // height: 100px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .icon {
-                    height: 65px;
-                    width: 65px;
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    svg {
-                        width: 65px;
-                        height: 65px;
-                        fill: black;
-                    }
-                }
-
-            }
-
-
-        }
-
-        .back-card {
-            transform: rotateY(180deg);
-            background: lighten($light-background, 13);
-
-            .desc {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                padding: 15px;
-
-                p {
-                    text-align: center;
-                    font-size: 18px;
-                    line-height: 35px;
-                }
+            svg {
+                width: 50px;
+                height: 50px;
+                fill: black;
             }
         }
-
-
 
     }
+
+    .title {
+        margin-bottom: 20px;
+
+        h6 {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: $primary-accent-color;
+        }
+    }
+
+    .desc {
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8rem;
+            text-align: center;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.2);
+
+        .icon-container {
+            .icon {
+
+                background: rgba(rgb(209, 209, 209), 0.6);
+            }
+        }
+    }
+
 }

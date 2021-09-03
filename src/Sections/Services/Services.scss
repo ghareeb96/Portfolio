@@ -1,21 +1,25 @@
 @import "../../app.scss";
 
-.services {
+.services-section {
     background: $secondary-background-color;
-    height: 100vh;
     width: 100%;
+    min-height : 700px;
+    height : auto;
     position: relative;
 
-
-    .cards-container {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        justify-items: center;
-        grid-gap: 1rem;
+    .cards-section {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        top : 60%;
+        left : 50%;
+        transform : translate(-50%,-50%);
+        width : 80%;
+
+        .cards-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            justify-items: center;
+            grid-gap: 1rem;
+        }
     }
 }

@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className="app">
-      <div className="container">
 
         <Header />
         <About />
@@ -17,7 +16,6 @@ function App() {
         <Skills />
         <Experience />
         <Projects />
-      </div>
     </div>
   );
 }

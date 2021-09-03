@@ -11,7 +11,7 @@ header {
     box-shadow: 0 0 4px;
 
     .navbar {
-        height: 60px;
+        height: $header-height;
         max-width : 600px;
         margin: 0 auto;
         display: flex;

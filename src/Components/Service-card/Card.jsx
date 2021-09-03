@@ -22,30 +22,21 @@ const Card = ({ data }) => {
 
     return (
         <div className="service-card">
-            <div className="inner-card">
-                <div className="front-card">
-                    <div className="icon-container">
-                        <div className="icon" id={data.id}>
-                        </div>
-                    </div>
-                    <div className="title">
-                        <h6>
-                            {data.title}
-                        </h6>
-                    </div>
-
-                </div>
-                <div className="back-card">
-                    <div className="desc">
-                        <p>
-                            {data.desc}
-                        </p>
-                    </div>
+            <div className="icon-container">
+                <div className="icon" id={data.id}>
                 </div>
             </div>
+            <div className="title">
+                <h6>
+                    {data.title}
+                </h6>
+            </div>
 
-
-
+            <div className="desc">
+                <p>
+                    {data.desc}
+                </p>
+            </div>
         </div>
     )
 }

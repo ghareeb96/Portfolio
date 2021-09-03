@@ -1,10 +1,10 @@
 @import "../../app.scss";
 
 
-.about {
+.about-section {
     width: 100%;
-    min-height: 100vh;
-    margin-top: 120px;
+    margin-top : $header-height;
+    min-height : calc(100vh - 60px);
 
     .about-content {
         justify-content: space-between;

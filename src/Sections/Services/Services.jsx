@@ -1,25 +1,33 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import "./Services.scss"
 import { data } from "./services-data"
 import Card from "../../Components/Service-card/Card"
 
 const Services = () => {
-    const [servicesData, setServicesData] = useState(data)
 
     return (
-        <div className="services" id="Services">
+        <div className="section secondary-section services-section" id="Services">
+            <div className="container">
+                <div className="headline">
+                    <div className="left-line"></div>
+                    <div className="headline-typo">
+                        <h5>What can i do</h5>
+                    </div>
+                </div>
 
-            <h6 className="headline">WHAT CAN I DO</h6>
+                <div className="cards-section">
+                    <div className="cards-container">
+                        {data?.map((service, index) => (
+                            <Card
+                                key={index}
+                                data={service}
+                            />
 
-            <div className="cards-container">
-                {servicesData.map((service, index) => (
-                    <Card
-                        key={index}
-                        data={service}
-                    />
-
-                ))}
+                        ))}
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }
