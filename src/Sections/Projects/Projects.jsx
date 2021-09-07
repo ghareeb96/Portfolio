@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import "./Projects.scss"
 import { data } from "./projects-data"
 import Card from "../../Components/Project-Card/Card"
 
 const Projects = () => {
-    const [projectsData, setProjectsData] = useState(data)
 
     return (
-        <div className="section projects" id="Portfolio">
+        <div className="section projects-section" id="Portfolio">
+            <div className="container">
 
-            <h6 className="headline">My Projects</h6>
+                <div className="headline">
+                    <div className="left-line"></div>
+                    <div className="headline-typo">
+                        <h5>My Projects</h5>
+                    </div>
+                </div>
 
-            <div className="filter-bar">
-                <ul>
-                    <li className="category active"><button>All</button></li>
-                    <li className="category"><button>Javascript</button></li>
-                    <li className="category"><button>React.js</button></li>
-                    <li className="category"><button>MERN</button></li>
-                </ul>
-            </div>
+                <div className="projects-container">
+                    {data?.map((project, index) => (
+                        <Card
+                            key={index}
+                            data={project}
+                        />
 
-            <div className="projects-container">
-                {projectsData.map((project, index) => (
-                    <Card
-                        key={index}
-                        data={project}
-                    />
-
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     )

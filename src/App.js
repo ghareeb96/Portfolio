@@ -5,6 +5,7 @@ import Services from "./Sections/Services/Services"
 import Skills from "./Sections/Skills/Skills"
 import Experience from "./Sections/Experience/Experience"
 import Projects from "./Sections/Projects/Projects"
+import Contact from './Sections/Contact/Contact';
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Skills />
         <Experience />
         <Projects />
+        <Contact/>
     </div>
   );
 }

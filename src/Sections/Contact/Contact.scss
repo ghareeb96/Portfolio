@@ -1,12 +1,109 @@
-.social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 300px;
+@import '../../App.scss';
 
-    a:hover {
-        svg {
-            fill: $primary-color;
+.contact-section {
+    .container {
+        min-height : 100vh;
+
+        .contact-details {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+
+            .contact-info {
+
+                display: flex;
+                flex-direction: column;
+                width : 400px;
+
+                .contact-option {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 50px;
+                    align-items: center;
+
+                    .icon {
+                        width: 40px;
+                        height: 40px;
+                        fill: black;
+                        margin-right: 20px;
+                    }
+                }
+
+                .social-links {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width : 300px;
+
+                    a {
+
+                        background: $action-background-color;
+                        padding: 10px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+
+                        .icon {
+                            fill: white;
+                            width : 25px;
+                            height : 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .email-me {
+            width : 400px;
+            
+            .form-container{
+                width : 400px;
+                form{
+                    display : flex;
+                    flex-direction: column;
+                    width : 100%;
+
+                    .form-input{
+                        display : flex;
+                        flex-direction: column;
+                        width : 100%;
+
+                        h6{
+                            font-size : 0.8rem;
+                            margin-bottom: 8px;
+                        }
+                        input{
+                            font-size : 1rem;
+                            padding : 0.6rem;
+                            margin-bottom : 1rem;
+                        }
+                        textarea{
+                            resize: none;
+                            width : 100%;
+                            font-family: "Raleway";
+                            font-weight: 600;
+                            font-size : 1rem;
+                            padding : 0.6rem;
+                            margin-bottom: 1rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+
+                    button{
+                        width : 100%;
+                        font-size : 1.2rem;
+                        background: $action-background-color;
+                        color : white;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        border : none;
+                        outline : none;
+                        padding : 0.4rem;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,30 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./Experience.scss"
 import { data } from "./ExperienceData"
 import ExperienceCard from "../../Components/Experience-Card/Experience-Card"
 
 const Experience = () => {
 
-    const [exData, setExData] = useState(data);
     return (
-        <div className="experience" id="Experience">
-            <h6 className="headline">My Previous Experience</h6>
+        <div className="section secondary-section experience-section" id="Experience">
+            <div className="container">
 
-            <div className="experience-container">
-                <div className="filter-bar">
-                    <ul>
-                        <li className="category active"><button>Education</button></li>
-                        <li className="category"><button>Work</button></li>
-                    </ul>
+            <div className="headline">
+                    <div className="left-line"></div>
+                    <div className="headline-typo">
+                        <h5>My Previous Experience</h5>
+                    </div>
                 </div>
-
-                <div className="timeline-container">
-                    <div className="timeline">
-                        {
-                            exData.map((item, index) => (
-                                <ExperienceCard data={item} key={index} pos={index % 2 === 0 ? "left" : "right"} />
-                            ))
-                        }
+                <div className="experience-container">
+                    <div className="timeline-container">
+                        <div className="timeline">
+                            {
+                                data?.map((item, index) => (
+                                    <ExperienceCard data={item} key={index} pos={index % 2 === 0 ? "left" : "right"} />
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

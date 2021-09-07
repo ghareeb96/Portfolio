@@ -1,8 +1,97 @@
 @import "../../app.scss";
 
 .project-card {
-    width: 300px;
-    height: 200px;
-    background: #ccc;
+    width: 350px;
+    height: 220px;
+    position : relative;
+    box-shadow: 0 0 8px;
 
+    .project-screen{
+        width : 100%;
+        height : 100%;
+
+        img{
+            width : 100%;
+            height : 100%;
+            object-position: center;
+            object-fit: cover;
+            pointer-events: none;
+        }
+    }
+
+    .project-overlay{
+        position : absolute;
+        top : 0;
+        left : 0;
+        width : 100%;
+        height : 100%;
+        background: rgba(rgb(255, 255, 255), 0.9);
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        pointer-events: none;
+        opacity : 0; 
+        transition : all 0.2s ease-out;
+
+        .title{
+            h4{
+                font-size : 1.6rem;
+                letter-spacing: 1px;
+                color : $primary-accent-color;
+            }
+        }
+
+        .project-actions{
+            width : 100%;
+            display : flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            
+
+            a{
+                border : none;
+                outline : none;
+                padding : 0.3rem 0.4rem;
+                display : flex;
+                align-items : center;
+                justify-content: space-evenly;
+                width : 130px;
+                font-size : 1rem;
+                letter-spacing: 2px;
+                font-weight: 700;
+                border-radius: 5px;   
+                cursor: pointer;
+                text-decoration : none;       
+                
+                
+                .icon{
+                    width : 25px;
+                    height : 25px;
+                }
+
+                &.demo{
+                    background : $action-background-color;
+                    color : $action-text-color;
+                }
+
+                &.repo{
+                    background: none;
+                    color : $action-background-color;
+                    border : 2px solid $action-background-color;
+                    .icon{
+                        fill : $action-background-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &:hover{
+        .project-overlay{
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
 }
