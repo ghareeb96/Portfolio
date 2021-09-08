@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState } from 'react'
 import "./Contact.scss"
 import axios from 'axios';
 import { ReactComponent as Address } from "../../Assets/Icons/Contact/address.svg"
@@ -11,18 +11,18 @@ import { ReactComponent as Linkedin } from "../../Assets/Icons/Social/linkedin.s
 
 const Contact = () => {
 
-    const initialData = {sender : '', email:'', message:''}
+    const initialData = { sender: '', email: '', message: '' }
     const [formData, setFormData] = useState(initialData)
 
 
-    const handleChange = (e)=>{
-        setFormData({...formData, [e.target.name]:e.target.value})
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = async (e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        if(formData.sender&&formData.email.includes('@')&&formData.message){
-            const {data} = await axios.post('http://localhost:5000/',formData)
+        if (formData.sender && formData.email.includes('@') && formData.message) {
+            const { data } = await axios.post('http://localhost:5000/', formData)
             console.log(data)
         }
     }
@@ -54,27 +54,27 @@ const Contact = () => {
                         </div>
 
                         <div className="social-links">
-                            <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook className='icon'/></a>
-                            <a href="https://twitter.com/__Ghareeeb" target="_blank" rel="noreferrer"><Twitter className='icon'/></a>
-                            <a href="https://github.com/ghareeb96" target="_blank" rel="noreferrer"><Github className='icon'/></a>
-                            <a href="https://www.linkedin.com/in/ghareeb-shehata" target="_blank" rel="noreferrer"><Linkedin className='icon'/></a>
+                            <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook className='icon' /></a>
+                            <a href="https://twitter.com/__Ghareeeb" target="_blank" rel="noreferrer"><Twitter className='icon' /></a>
+                            <a href="https://github.com/ghareeb96" target="_blank" rel="noreferrer"><Github className='icon' /></a>
+                            <a href="https://www.linkedin.com/in/ghareeb-shehata" target="_blank" rel="noreferrer"><Linkedin className='icon' /></a>
                         </div>
                     </div>
                     <div className="email-me">
-                      
+
                         <div className="form-container">
                             <form>
                                 <div className="form-input">
                                     <h6>Your name</h6>
-                                    <input type="text" name="sender" value = {formData.sender} onChange={handleChange} required/>
+                                    <input type="text" name="sender" value={formData.sender} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
                                     <h6>Your Email</h6>
-                                    <input type="email" name="email" value = {formData.email} onChange={handleChange} required/>
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
                                     <h6>Your Message</h6>
-                                    <textarea rows="6" name="message" value = {formData.message} onChange={handleChange} required/>
+                                    <textarea rows="6" name="message" value={formData.message} onChange={handleChange} required />
                                 </div>
                                 <div className="btn submit-btn">
                                     <button type="submit" onClick={handleSubmit}>Send Message</button>
@@ -84,6 +84,9 @@ const Contact = () => {
                     </div>
                 </div>
 
+            </div>
+            <div className="copyrights">
+                <h6>Copyright © 2021 Ghareeb | All rights reserved</h6>
             </div>
         </div>
     )

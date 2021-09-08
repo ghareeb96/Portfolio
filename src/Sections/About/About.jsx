@@ -16,7 +16,6 @@ const About = () => {
                 </div>
 
                 <div className="about-content">
-
                     <div className="details-section">
                         <h4>Hello Friend, I am <span>Ghareeb Shehata</span></h4>
                         <p>A web designer/developer (MERN stack), who is responsible for both Design a good layout of a website according to certain specifications and turns the good design to code, also responsible for creating a server and a database and handling the connection between both frontend and backend with a readable, maintainable and well-structured codes.

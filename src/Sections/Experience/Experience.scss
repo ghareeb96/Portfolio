@@ -1,14 +1,8 @@
 @import "../../app.scss";
 
 .experience-section {
-    min-height: 100vh;
+    background : url('./background.jpg') !important;
 
-    .experience-container {
-        .filter-bar {
-            width: 200px;
-        }
-
-    }
 
     .timeline-container {
         width: 100%;
@@ -28,6 +22,7 @@
                 top: 0;
                 transform: translate(-50%, 0);
                 background: #000;
+                z-index: 1;
             }
         }
     }

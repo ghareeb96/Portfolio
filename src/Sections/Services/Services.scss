@@ -1,11 +1,11 @@
 @import "../../app.scss";
 
 .services-section {
-    background: $secondary-background-color;
     width: 100%;
     min-height : 700px;
     height : auto;
-    position: relative;
+    background : url('./background.jpg') !important;
+
 
     .cards-section {
         position: absolute;
@@ -13,6 +13,7 @@
         left : 50%;
         transform : translate(-50%,-50%);
         width : 80%;
+        z-index: 2;
 
         .cards-container {
             width: 100%;
