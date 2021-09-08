@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ad8a1287.chunk.css",
-    "main.js": "/Portfolio/static/js/main.1ce1dbbb.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.1ce1dbbb.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.cc93adb7.chunk.css",
+    "main.js": "/Portfolio/static/js/main.24d25b99.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.24d25b99.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.554e0ebb.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.554e0ebb.js.map",
     "static/js/2.f484153a.chunk.js": "/Portfolio/static/js/2.f484153a.chunk.js",
     "static/js/2.f484153a.chunk.js.map": "/Portfolio/static/js/2.f484153a.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/css/main.ad8a1287.chunk.css.map": "/Portfolio/static/css/main.ad8a1287.chunk.css.map",
+    "static/css/main.cc93adb7.chunk.css.map": "/Portfolio/static/css/main.cc93adb7.chunk.css.map",
     "static/js/2.f484153a.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.f484153a.chunk.js.LICENSE.txt",
     "static/media/AMDb.8eac4f13.png": "/Portfolio/static/media/AMDb.8eac4f13.png",
     "static/media/Booklist.7c8798e6.png": "/Portfolio/static/media/Booklist.7c8798e6.png",
@@ -17,8 +17,8 @@
     "static/media/Netflix.91bbefaf.png": "/Portfolio/static/media/Netflix.91bbefaf.png",
     "static/media/Weather.51282314.png": "/Portfolio/static/media/Weather.51282314.png",
     "static/media/address.e2bc367f.svg": "/Portfolio/static/media/address.e2bc367f.svg",
-    "static/media/Experience.scss": "/Portfolio/static/media/background.181baf5e.jpg",
-    "static/media/Services.scss": "/Portfolio/static/media/background.5f06779d.jpg",
+    "static/media/Services.scss": "/Portfolio/static/media/background.3e8ea66b.jpg",
+    "static/media/Experience.scss": "/Portfolio/static/media/background.9eb36e6a.jpg",
     "static/media/code.7ccc7699.svg": "/Portfolio/static/media/code.7ccc7699.svg",
     "static/media/download.fa4c09e0.svg": "/Portfolio/static/media/download.fa4c09e0.svg",
     "static/media/facebook.acd66cb0.svg": "/Portfolio/static/media/facebook.acd66cb0.svg",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.554e0ebb.js",
     "static/js/2.f484153a.chunk.js",
-    "static/css/main.ad8a1287.chunk.css",
-    "static/js/main.1ce1dbbb.chunk.js"
+    "static/css/main.cc93adb7.chunk.css",
+    "static/js/main.24d25b99.chunk.js"
   ]
 }
