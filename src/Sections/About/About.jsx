@@ -1,11 +1,17 @@
 import React from 'react'
-import "./About.scss"
+import "./About.scss";
+import bg1 from "./BG1.svg";
+import bg2 from "./BG2.svg";
 import { ReactComponent as Download } from "../../Assets/Icons/download.svg";
 import Profile from '../../Assets/Images/profileImg.png';
 
 const About = () => {
     return (
         <div className="section about-section" id="About">
+            <div className="background">
+                <img src={bg1} alt="bg1" className="background-wave"/>
+                <img src={bg2} alt="bg2" className="background-wave"/>
+            </div>
             <div className="container">
 
                 <div className="headline">

@@ -16,7 +16,7 @@
             position: relative;
             width: 100%;
             height: 100%;
-            background: darken($primary-accent-color, 10);
+            background: darken($primary-accent-color, 20);
             border-radius: 3px;
             color: white;
             padding: 15px;
@@ -26,7 +26,7 @@
                 position: absolute;
                 width: 30px;
                 height: 30px;
-                background: darken($primary-accent-color, 10);
+                background: darken($primary-accent-color, 20);
                 left: 99%;
                 top: 25px;
                 clip-path: polygon(0 0, 0 100%, 100% 50%);
