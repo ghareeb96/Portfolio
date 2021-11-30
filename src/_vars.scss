@@ -1,18 +1,23 @@
 $primary-background-color : #ffffff;
 $secondary-background-color : #e4e4e4;
 $header-background-color : #f7f7f7;
-$main-text-color : #000000;
-$secondary-text-color : #696969;
-$action-background-color : #2D5C5E;
-$action-text-color : #ffffff;
-$primary-accent-color : #90323D;
+$action-color : #2D5C5E;
+$accent-color : #90323D;
 
 
 
-$primary-color : #DEBF1B;
-$secondary-color:#060341;
-$dark-background : #1c1d1c;
-$light-background : #cecece;
+
 
 
 $header-height : 60px;
+$experience-card-width: 420px;
+$project-card-width: 350px;
+$service-card-width: 220px;
+
+
+//* Screen media queries
+$xSmallScreen : 480px;
+$smallScreen : 768px;
+$mediumScreen : 1024px;
+$largeScreen : 1240px;
+$xLargeScreen : 1480px;

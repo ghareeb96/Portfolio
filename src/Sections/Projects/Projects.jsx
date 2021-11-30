@@ -12,7 +12,7 @@ const Projects = () => {
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>My Projects</h5>
+                        <h5>Projects</h5>
                     </div>
                 </div>
 

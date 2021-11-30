@@ -27,3 +27,23 @@
         }
     }
 }
+
+@media screen and (max-width : $largeScreen){
+    .experience-section {
+        background : url('./background.jpg') !important;
+    
+    
+        .timeline-container {
+            .timeline {
+                width: fit-content;
+                margin: auto;
+                &::after {
+                    left: 5%;
+                    transform: translate(0, 0);
+
+                }
+            }
+        }
+    }
+
+}

@@ -7,15 +7,15 @@ const Experience = () => {
 
     return (
         <div className="section secondary-section experience-section" id="Experience">
+            <div className="overlay"></div>
             <div className="container">
 
-            <div className="headline">
+                <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>My Previous Experience</h5>
+                        <h5>Education</h5>
                     </div>
                 </div>
-                <div className="experience-container">
                     <div className="timeline-container">
                         <div className="timeline">
                             {
@@ -24,7 +24,6 @@ const Experience = () => {
                                 ))
                             }
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

@@ -12,3 +12,11 @@
         grid-gap: 2.5rem 1rem;
     }
 }
+
+@media screen and(max-width: $xSmallScreen){
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-items: center;
+        grid-gap: 2.5rem 1rem;
+    }
+}

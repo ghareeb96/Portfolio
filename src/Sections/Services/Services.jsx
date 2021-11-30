@@ -7,6 +7,7 @@ const Services = () => {
 
     return (
         <div className="section secondary-section services-section" id="Services">
+            <div className="overlay"></div>
             <div className="container">
                 <div className="headline">
                     <div className="left-line"></div>

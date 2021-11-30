@@ -14,7 +14,7 @@ const Skills = () => {
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>My Technical Skills</h5>
+                        <h5>Technical Skills</h5>
                     </div>
                 </div>
 

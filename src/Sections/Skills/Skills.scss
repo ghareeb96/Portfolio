@@ -12,3 +12,12 @@
     }
 
 }
+
+@media screen and (max-width: $smallScreen) {
+    .skills-section{
+
+        .skills-container{
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+    }
+}

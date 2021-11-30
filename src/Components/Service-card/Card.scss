@@ -1,13 +1,14 @@
 @import "../../app.scss";
 
 .service-card {
-    width: 220px;
+    width: $service-card-width;
     height: 300px;
     background-color: white;
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 0 6px;
     transition: all 0.2s ease-out;
+    z-index: 2 !important;
 
 
     .icon-container {
@@ -41,7 +42,7 @@
             text-align: center;
             font-size: 1rem;
             font-weight: 700;
-            color: $primary-accent-color;
+            color: $accent-color;
         }
     }
 
@@ -59,7 +60,7 @@
         .icon-container {
             .icon {
 
-                background: rgba(rgb(209, 209, 209), 0.6);
+                background: rgba(209, 209, 209, 0.6);
             }
         }
     }

@@ -2,7 +2,7 @@
 
 
 .skill-card {
-    width: 300px;
+    width:100%;
     height: 50px;
     color: black;
     display: flex;
@@ -12,6 +12,7 @@
 
 
     .icon {
+        width : 15%;
         svg {
             width: 40px;
             height: 40px;
@@ -25,6 +26,7 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
+        width : 83%;
 
         .title {
 
@@ -35,27 +37,55 @@
         }
 
         .progress-bar {
-            width: 250px;
+            width: 100%;
 
 
             .MuiLinearProgress-colorPrimary {
                 height: 4px;
                 border-radius: 4px;
-                background-color: lighten($light-background, 8);
+                background-color: $secondary-background-color;
             }
 
             .MuiLinearProgress-barColorPrimary {
-                background-color: $dark-background;
+                background-color: #222;
             }
 
             .MuiTypography-body2 {
                 font-size: 1rem;
                 font-family: "Raleway";
                 font-weight: 400;
-                color: $secondary-color;
+                color: #222;
             }
         }
 
     }
 
+}
+
+@media screen and (max-width: $smallScreen) {
+    .skill-card{
+
+        .icon {
+            width : 10%;
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        .title-bar {
+            width : 86%;
+            height: 80%;
+    
+            .title {
+    
+                h6 {
+                    letter-spacing: 1px;
+                    font-size: 1.2rem;
+                }
+            }
+    
+ 
+    
+        }
+    }
 }
