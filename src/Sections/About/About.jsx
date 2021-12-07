@@ -1,15 +1,18 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 import "./About.scss";
 import bg1 from "./BG1.svg";
 import bg2 from "./BG2.svg";
 import Profile from '../../Assets/Images/profileImg.png';
 import CV from "./Ghareeb.pdf";
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 const About = () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
-        
-    })
+    const picture = useRef(null)
+
     return (
         <div className="section about-section" id="About">
             <div className="background">
@@ -18,12 +21,6 @@ const About = () => {
             </div>
             <div className="container">
 
-                <div className="headline">
-                    <div className="left-line"></div>
-                    <div className="headline-typo">
-                        <h5>Who am I</h5>
-                    </div>
-                </div>
 
                 <div className="about-content">
                     <div className="details-section">
@@ -41,11 +38,11 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="image-section">
+                    <div className="image-section" ref={picture}>
                         <div className="profile-image">
                             <div className="img-background"></div>
                             <div className="image">
-                                <img src={Profile} alt="Profile" />
+                                <img src={Profile} alt="Profile" id="picture" />
                             </div>
                         </div>
                     </div>

@@ -9,6 +9,7 @@ const ExperienceCard = ({ data, pos }) => {
             document.getElementById(target).appendChild(svgTag)
         }
     }
+    
 
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const ExperienceCard = ({ data, pos }) => {
         }
     })
     return (
-        <div className={pos === "left" ? "experience-card" : "experience-card right-sided"}>
+        <div className={pos === "left" ? "experience-card left-sided" : "experience-card right-sided"}>
             <div className="box-container">
                 <div className="box">
                     <div className="arrow"></div>

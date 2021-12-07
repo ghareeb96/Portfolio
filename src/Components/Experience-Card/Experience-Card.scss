@@ -5,6 +5,7 @@
     width: 100%;
     height: auto;
     position: relative;
+    z-index: 2;
 
 
     .box-container {
@@ -20,7 +21,6 @@
             border-radius: 3px;
             color: white;
             padding: 15px;
-            z-index: 1;
 
             .arrow {
                 position: absolute;
@@ -30,7 +30,6 @@
                 left: 99%;
                 top: 28px;
                 clip-path: polygon(0 0, 0 100%, 100% 50%);
-                z-index: 1;
 
             }
 
