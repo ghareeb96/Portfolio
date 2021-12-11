@@ -5,48 +5,55 @@ import ExperienceCard from "../../Components/Experience-Card/Experience-Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Experience = () => {
+const Experience = ({setActiveSection, activeSection}) => {
     gsap.registerPlugin(ScrollTrigger);
-    const timeline = useRef(null)
+    const experienceSection = useRef(null)
     useEffect(() => {
-        const element = timeline.current
+        const element = experienceSection.current
+        ScrollTrigger.create({
+            trigger : element,
+            onEnter : ()=> setActiveSection("Experience"),
+            onEnterBack: ()=> setActiveSection("Experience"),
+        })
+
         let t1 = gsap.timeline({
-            scrollTrigger:{
-                trigger:element.querySelector(".icon-node"),
+            scrollTrigger: {
+                trigger: element.querySelector(".icon-node"),
                 start: "top center",
                 end: "top center"
             }
         })
-        if(window.screen.availWidth > 1240){
+        if (window.screen.availWidth > 1240) {
 
-        
-        t1.fromTo(
-            element.querySelectorAll(".icon-node"),
-            {
-                scale: 0,
-                opacity: 0,
-            },
-            {
-               
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-            }
-        ).from(
-            element.querySelectorAll(".left-sided .box-container"),
-            {
-                opacity: 0,
-                x: -40,
-            }
-        )
-            .from(
-                element.querySelectorAll(".right-sided .box-container"),
+
+            t1.fromTo(
+                element.querySelectorAll(".icon-node"),
+                {
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4
+                }
+            ).from(
+                element.querySelectorAll(".left-sided .box-container"),
                 {
                     opacity: 0,
-                    x: 40,
+                    x: -40,
                 }
             )
-        }else{
+                .from(
+                    element.querySelectorAll(".right-sided .box-container"),
+                    {
+                        opacity: 0,
+                        x: 40,
+                        stagger: 0.4
+                    }
+                )
+        } else {
             t1.fromTo(
                 element.querySelectorAll(".icon-node"),
                 {
@@ -56,8 +63,8 @@ const Experience = () => {
                 {
                     opacity: 1,
                     scale: 1,
-                    duration: 1,
-                  
+                    duration: 0.4
+
                 }
             )
                 .from(
@@ -65,14 +72,15 @@ const Experience = () => {
                     {
                         opacity: 0,
                         x: 40,
+                        stagger: 0.4
                     }
                 )
         }
 
     }, [])
-    
+
     return (
-        <div className="section secondary-section experience-section" id="Experience">
+        <div className="section secondary-section experience-section" id="Experience" ref={experienceSection}>
             <div className="overlay"></div>
             <div className="container">
 
@@ -83,7 +91,7 @@ const Experience = () => {
                     </div>
                 </div>
                 <div className="timeline-container">
-                    <div className="timeline" ref={timeline}>
+                    <div className="timeline" >
                         {
                             data?.map((item, index) => (
                                 <ExperienceCard data={item} key={index} pos={index % 2 === 0 ? "left" : "right"} />

@@ -1,12 +1,42 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import "./Projects.scss"
 import { data } from "./projects-data"
 import Card from "../../Components/Project-Card/Card"
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Projects = () => {
+const Projects = ({setActiveSection}) => {
+    gsap.registerPlugin(ScrollTrigger);
+    const projectsSection = useRef(null)
+    useEffect(()=>{
+        const element = projectsSection.current
 
+        ScrollTrigger.create({
+            trigger : element,
+            onEnter : ()=> setActiveSection("Projects"),
+            onEnterBack: ()=> setActiveSection("Projects"),
+        })
+
+        gsap.fromTo(
+            element.querySelectorAll(".project-card"),
+            {
+                opacity: 0,
+                y: 40
+            },
+            {
+                scrollTrigger: {
+                    trigger: element.querySelectorAll(".project-card"),
+                    start : "top center",
+                    end: "top bottom"
+                },
+                opacity: 1,
+                y: 0,
+                stagger: 0.2
+            }
+        )
+    },[])
     return (
-        <div className="section projects-section" id="Portfolio">
+        <div className="section projects-section" id="Projects" ref={projectsSection}>
             <div className="container">
 
                 <div className="headline">

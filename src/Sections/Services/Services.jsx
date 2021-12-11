@@ -5,13 +5,22 @@ import Card from "../../Components/Service-card/Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Services = () => {
+const Services = ({activeSection, setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
-    const serviceContainer = useRef(null);
+    const serviceSection = useRef(null);
+    
     useEffect(()=>{
-        const container = serviceContainer.current;
+
+        const element = serviceSection.current;
+
+        ScrollTrigger.create({
+            trigger : element,
+            onEnter : ()=> setActiveSection("Services"),
+            onEnterBack: ()=> setActiveSection("Services"),
+            
+        })
         gsap.fromTo(
-            container.querySelectorAll(".service-card"),
+            element.querySelectorAll(".service-card"),
             {
                 y:20,
                 opacity:0
@@ -25,18 +34,17 @@ const Services = () => {
                 },
                 duration: 0.2,
                 scrollTrigger:{
-                    trigger: container.querySelectorAll(".service-card"),
+                    trigger: element.querySelectorAll(".service-card"),
                     start : "top center",
                     end : "top center",
-                    // scrub: true
                 }
             }
         )
-    })
+    },[])
 
 
     return (
-        <div className="section secondary-section services-section" id="Services">
+        <div className="section secondary-section services-section" id="Services" ref={serviceSection}>
             <div className="overlay"></div>
             <div className="container">
                 <div className="headline">
@@ -46,7 +54,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="cards-section" ref={serviceContainer}>
+                <div className="cards-section">
                     <div className="cards-container">
                         {data?.map((service, index) => (
                             <Card

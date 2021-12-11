@@ -8,13 +8,22 @@ import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-const About = () => {
+const About = ({activeSection, setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const picture = useRef(null)
+    const aboutSection = useRef(null)
+
+    useEffect(()=>{
+        const element = aboutSection.current
+        ScrollTrigger.create({
+            trigger : element,
+            onEnterBack: ()=> setActiveSection("About"),
+        })
+    },[])
+
 
     return (
-        <div className="section about-section" id="About">
+        <div className="section about-section" id="About" ref={aboutSection}>
             <div className="background">
                 <img src={bg1} alt="bg1" className="background-wave" />
                 <img src={bg2} alt="bg2" className="background-wave" />
@@ -38,7 +47,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="image-section" ref={picture}>
+                    <div className="image-section" >
                         <div className="profile-image">
                             <div className="img-background"></div>
                             <div className="image">

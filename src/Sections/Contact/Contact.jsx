@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import "./Contact.scss"
 import axios from 'axios';
 import { ReactComponent as Address } from "../../Assets/Icons/Contact/address.svg"
@@ -8,8 +8,12 @@ import { ReactComponent as Facebook } from "../../Assets/Icons/Social/facebook.s
 import { ReactComponent as Twitter } from "../../Assets/Icons/Social/twitter.svg"
 import { ReactComponent as Github } from "../../Assets/Icons/Social/github.svg"
 import { ReactComponent as Linkedin } from "../../Assets/Icons/Social/linkedin.svg"
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Contact = () => {
+const Contact = ({setActiveSection}) => {
+    gsap.registerPlugin(ScrollTrigger);
+    const contactSection = useRef(null)
 
     const initialData = { sender: '', email: '', message: '' }
     const [formData, setFormData] = useState(initialData)
@@ -27,9 +31,18 @@ const Contact = () => {
         }
     }
 
+    useEffect(()=>{
+        const element = contactSection.current
+
+        ScrollTrigger.create({
+            trigger : element,
+            onEnter : ()=> setActiveSection("Contact"),
+            onEnterBack: ()=> setActiveSection("Contact"),
+        })
+    },[])
 
     return (
-        <div className="section contact-section" id="Contact">
+        <div className="section contact-section" id="Contact" ref={contactSection}>
             <div className="container">
                 <div className="headline">
                     <div className="left-line"></div>

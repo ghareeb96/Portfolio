@@ -129,6 +129,7 @@ header {
                 fill: #000;
                 width : 28px;
                 height : 28px;
+                pointer-events: none;
             }
         }
 
@@ -143,7 +144,7 @@ header {
                 .navbar-links{
                     opacity: 1;
                     transform : translateX(0);
-                    
+                    z-index: 2;
                 }
             }
         }

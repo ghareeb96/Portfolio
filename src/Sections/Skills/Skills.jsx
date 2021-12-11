@@ -5,12 +5,21 @@ import SkillCard from "../../Components/Skill-Card/Skill-Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Skills = () => {
+const Skills = ({setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
-    const skills = useRef(null)
+    const skillsSection = useRef(null)
 
     useEffect(() => {
-        const element = skills.current;
+        const element = skillsSection.current;
+
+        ScrollTrigger.create({
+            trigger : element,
+            onEnter : ()=> setActiveSection("Skills"),
+            onEnterBack: ()=> setActiveSection("Skills"),
+            
+        })
+
+
         gsap.fromTo(
             element.querySelectorAll(".MuiLinearProgress-barColorPrimary"),
             {
@@ -31,7 +40,7 @@ const Skills = () => {
     }, [])
 
     return (
-        <div className="section skills-section" id="Skills">
+        <div className="section skills-section" id="Skills" ref={skillsSection}>
             <div className="container">
 
 
@@ -42,7 +51,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="skills-container" ref={skills}>
+                <div className="skills-container">
 
                     {data?.map((skill, index) => (
                         <SkillCard data={skill} key={index} />
