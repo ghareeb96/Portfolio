@@ -12,6 +12,8 @@ const Experience = ({setActiveSection, activeSection}) => {
         const element = experienceSection.current
         ScrollTrigger.create({
             trigger : element,
+            start: "top center",
+            end: "bottom center",
             onEnter : ()=> setActiveSection("Experience"),
             onEnterBack: ()=> setActiveSection("Experience"),
         })

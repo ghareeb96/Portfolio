@@ -14,6 +14,8 @@ const Skills = ({setActiveSection}) => {
 
         ScrollTrigger.create({
             trigger : element,
+            start: "top center",
+            end: "bottom center",
             onEnter : ()=> setActiveSection("Skills"),
             onEnterBack: ()=> setActiveSection("Skills"),
             

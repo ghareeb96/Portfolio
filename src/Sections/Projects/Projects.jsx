@@ -13,6 +13,8 @@ const Projects = ({setActiveSection}) => {
 
         ScrollTrigger.create({
             trigger : element,
+            start: "top center",
+            end: "bottom center",
             onEnter : ()=> setActiveSection("Projects"),
             onEnterBack: ()=> setActiveSection("Projects"),
         })

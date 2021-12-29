@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Header.scss";
 import { ReactComponent as Menu } from './Menu.svg'
 
@@ -17,6 +17,12 @@ const Nav = ({ activeSection }) => {
             headerElement.classList.remove("open");
         }
     }
+    useEffect(()=>{
+        const links = document.querySelectorAll(".nav-link")
+        links.forEach(link=> link.classList.remove("active"))
+
+        document.querySelector(`#${activeSection}-link`).classList.add("active")
+    },[activeSection])
 
 
 
@@ -27,12 +33,12 @@ const Nav = ({ activeSection }) => {
                 <nav className="navbar" onClick={closeSidebar}>
                     <div className="navbar-links">
                         <ul>
-                            <li className={activeSection.About} ><a href="#About">About</a></li>
-                            <li className={activeSection.Services} ><a href="#Services">Services</a></li>
-                            <li className={activeSection.Skills} ><a href="#Skills">Skills</a></li>
-                            <li className={activeSection.Experience}><a href="#Experience">Experience</a></li>
-                            <li className={activeSection.Portfolio} ><a href="#Projects">Projects</a></li>
-                            <li className={activeSection.Contact} ><a href="#Contact">Contact</a></li>
+                            <li className="nav-link" id="About-link"><a href="#About">About</a></li>
+                            <li className="nav-link" id="Services-link"><a href="#Services">Services</a></li>
+                            <li className="nav-link" id="Skills-link"><a href="#Skills">Skills</a></li>
+                            <li className="nav-link" id="Experience-link"><a href="#Experience">Experience</a></li>
+                            <li className="nav-link" id="Projects-link"><a href="#Projects">Projects</a></li>
+                            <li className="nav-link" id="Contact-link"><a href="#Contact">Contact</a></li>
 
                         </ul>
                     </div>

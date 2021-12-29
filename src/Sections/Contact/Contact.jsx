@@ -36,6 +36,8 @@ const Contact = ({setActiveSection}) => {
 
         ScrollTrigger.create({
             trigger : element,
+            start: "top center",
+            end: "bottom center",
             onEnter : ()=> setActiveSection("Contact"),
             onEnterBack: ()=> setActiveSection("Contact"),
         })

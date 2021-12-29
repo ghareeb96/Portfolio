@@ -15,8 +15,11 @@ const Services = ({activeSection, setActiveSection}) => {
 
         ScrollTrigger.create({
             trigger : element,
+            start: "top center",
+            end: "bottom center",
             onEnter : ()=> setActiveSection("Services"),
             onEnterBack: ()=> setActiveSection("Services"),
+            onLeaveBack:()=> setActiveSection("About")
             
         })
         gsap.fromTo(
