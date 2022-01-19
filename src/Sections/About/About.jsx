@@ -1,41 +1,32 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./About.scss";
-import bg1 from "./BG1.svg";
-import bg2 from "./BG2.svg";
-import Profile from '../../Assets/Images/profileImg.png';
+import profileImg from '../../Assets/Images/ProfileImg.webp';
 import CV from "./Ghareeb.pdf";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
-const About = ({activeSection, setActiveSection}) => {
+const About = ({ setActiveSection }) => {
     gsap.registerPlugin(ScrollTrigger);
 
     const aboutSection = useRef(null)
 
-    useEffect(()=>{
+    useEffect(() => {
         const element = aboutSection.current
         ScrollTrigger.create({
-            trigger : element,
-            onEnterBack: ()=> setActiveSection("About"),
+            trigger: element,
+            end: "bottom center",
+            onEnterBack: () => setActiveSection("About")
         })
-    },[])
-
+    }, [setActiveSection])
 
     return (
         <div className="section about-section" id="About" ref={aboutSection}>
-            <div className="background">
-                <img src={bg1} alt="bg1" className="background-wave" />
-                <img src={bg2} alt="bg2" className="background-wave" />
-            </div>
             <div className="container">
-
-
                 <div className="about-content">
                     <div className="details-section">
                         <h4>Hello Friend ! </h4>
                         <h4>I am <span>Ghareeb Shehata</span></h4>
-                        <p>A web designer/developer (MERN stack), who is responsible for both Design a good layout of a website according to certain specifications and turns the good design to code, also responsible for creating a server and a database and handling the connection between both frontend and backend with a readable, maintainable and well-structured codes.
+                        <p>A MERN Stack web developer, Designing a nice-looking layout of a website and turning this design to code, also creating a server and a database and handling the connection between both frontend and backend with a readable, maintainable and well-structured lines of code. Producing a high performing websites.
                         </p>
                         <p>
                             Always seeking for opportunity to get more knowledge of programming and design to enhance my own career. </p>
@@ -46,14 +37,8 @@ const About = ({activeSection, setActiveSection}) => {
                             </a>
                         </div>
                     </div>
-
-                    <div className="image-section" >
-                        <div className="profile-image">
-                            <div className="img-background"></div>
-                            <div className="image">
-                                <img src={Profile} alt="Profile" id="picture" />
-                            </div>
-                        </div>
+                    <div className="profileImg">
+                        <img src={profileImg} alt="profileImg" id="profile" />
                     </div>
                 </div>
             </div>

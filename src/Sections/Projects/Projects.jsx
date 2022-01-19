@@ -36,7 +36,7 @@ const Projects = ({setActiveSection}) => {
                 stagger: 0.2
             }
         )
-    },[])
+    },[setActiveSection])
     return (
         <div className="section projects-section" id="Projects" ref={projectsSection}>
             <div className="container">

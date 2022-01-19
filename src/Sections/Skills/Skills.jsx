@@ -28,18 +28,19 @@ const Skills = ({setActiveSection}) => {
                 width: 0
             },
             {
+                duration: 1,
+                width: "100%",
+                ease: "power2",
                 scrollTrigger:{
                     trigger: element.querySelector(".skill-card"),
                     start: "top center",
-                    end: "top center"
+                    end: "bottom center+=10",
+                    // scrub: true
                 },
-                width: "100%",
-                duration: 1,
-                ease: "power2"
                 
             }
         )
-    }, [])
+    }, [setActiveSection])
 
     return (
         <div className="section skills-section" id="Skills" ref={skillsSection}>

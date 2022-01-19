@@ -10,6 +10,7 @@ import Contact from './Sections/Contact/Contact';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+
 function App() {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -25,27 +26,22 @@ function App() {
       />
       <About
         setActiveSection={setActiveSection}
-        activeSection={activeSection}
       />
       <Services
         setActiveSection={setActiveSection}
-        activeSection={activeSection}
       />
       <Skills
         setActiveSection={setActiveSection}
-        activeSection={activeSection}
       />
       <Experience
         setActiveSection={setActiveSection}
-        activeSection={activeSection}
       />
       <Projects
         setActiveSection={setActiveSection}
-        activeSection={activeSection}
       />
       <Contact
         setActiveSection={setActiveSection}
-        activeSection={activeSection} />
+      />
     </div>
   );
 }

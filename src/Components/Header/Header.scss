@@ -7,7 +7,19 @@ header {
     position: fixed;
     top: 0;
     z-index: 3;
-    box-shadow: 0 0 4px;
+    transition: all 0.2s ease-out;
+    
+    &.white-header{
+        background: #fff;
+        box-shadow: 0 0 4px;
+
+
+        .navbar .navbar-links ul li a{
+            color : #171717;
+
+        }
+        
+    }
 
     .navbar {
         height: 100%;
@@ -36,16 +48,16 @@ header {
                         font-weight: 400;
                         font-size: 1rem;
                         text-decoration: none;
-                        color: #000;
+                        color: #fff;
                         letter-spacing: 1px;
                         text-transform: uppercase;
-                        transition: all 0.5s ease-in-out;
+                        transition: all 0.2s;
                     }
                 }
 
                 li.active {
                     a {
-                        color: $action-color;
+                        color: lighten($action-color,25);
                         font-weight: 700;
                     }
 
@@ -57,7 +69,7 @@ header {
                         animation: activeLink 0.5s ease-in-out;
                         position: absolute;
                         height: 2px;
-                        background-color: $action-color;
+                        background-color: lighten($action-color,25);
                         bottom: 0;
                         left: 0;
                         width: 100%;
@@ -85,8 +97,7 @@ header {
             align-items: center;
             justify-content: flex-end;
         }
-
-        
+                
         .navbar {
             position : fixed;
             top : 0;
@@ -128,7 +139,7 @@ header {
             
             
             .icon {
-                fill: #000;
+                fill: #fff;
                 width : 28px;
                 height : 28px;
                 pointer-events: none;
@@ -139,7 +150,6 @@ header {
         
         &.open{
             .navbar {
-               
                 opacity: 1;
                 pointer-events: all;
     
@@ -148,6 +158,16 @@ header {
                     transform : translateX(0);
                     z-index: 2;
                 }
+            }
+        }
+
+        &.white-header{
+            .menu-btn .icon{
+                fill: #171717;
+            }
+
+            .navbar .navbar-links ul li:not(.active) a{
+                color: #fff;
             }
         }
     }

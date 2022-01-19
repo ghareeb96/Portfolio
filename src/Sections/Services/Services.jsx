@@ -5,7 +5,7 @@ import Card from "../../Components/Service-card/Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Services = ({activeSection, setActiveSection}) => {
+const Services = ({setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
     const serviceSection = useRef(null);
     
@@ -17,9 +17,15 @@ const Services = ({activeSection, setActiveSection}) => {
             trigger : element,
             start: "top center",
             end: "bottom center",
-            onEnter : ()=> setActiveSection("Services"),
+            onEnter : ()=> {
+                setActiveSection("Services")
+                document.querySelector("header").classList.add("white-header")
+            },
             onEnterBack: ()=> setActiveSection("Services"),
-            onLeaveBack:()=> setActiveSection("About")
+            onLeaveBack:()=> {
+                setActiveSection("About")
+                document.querySelector("header").classList.remove("white-header")
+            }
             
         })
         gsap.fromTo(
@@ -31,19 +37,17 @@ const Services = ({activeSection, setActiveSection}) => {
             {
                 y:0,
                 opacity:1,
-                stagger:{
-                    each: 0.2,
-                    yoyo: true
-                },
-                duration: 0.2,
+                duration: 0.4,
+                stagger: 0.1,
+                yoyo: true,
                 scrollTrigger:{
                     trigger: element.querySelectorAll(".service-card"),
                     start : "top center",
-                    end : "top center",
+                    end: "bottom center+=10",
                 }
             }
         )
-    },[])
+    },[setActiveSection])
 
 
     return (

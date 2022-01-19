@@ -41,7 +41,7 @@ const Contact = ({setActiveSection}) => {
             onEnter : ()=> setActiveSection("Contact"),
             onEnterBack: ()=> setActiveSection("Contact"),
         })
-    },[])
+    },[setActiveSection])
 
     return (
         <div className="section contact-section" id="Contact" ref={contactSection}>

@@ -1,7 +1,7 @@
 @import "../../app.scss";
 
 .experience-section {
-    background : url('./background.jpg') !important;
+    // background : url('./background.webp') !important;
     
 
 
@@ -33,8 +33,6 @@
 
 @media screen and (max-width : $largeScreen){
     .experience-section {
-        background : url('./background.jpg') !important;
-    
     
         .timeline-container {
             .timeline {

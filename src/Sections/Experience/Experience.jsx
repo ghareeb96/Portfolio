@@ -5,7 +5,7 @@ import ExperienceCard from "../../Components/Experience-Card/Experience-Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Experience = ({setActiveSection, activeSection}) => {
+const Experience = ({setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
     const experienceSection = useRef(null)
     useEffect(() => {
@@ -79,7 +79,7 @@ const Experience = ({setActiveSection, activeSection}) => {
                 )
         }
 
-    }, [])
+    }, [setActiveSection])
 
     return (
         <div className="section secondary-section experience-section" id="Experience" ref={experienceSection}>

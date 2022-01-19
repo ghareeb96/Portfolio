@@ -3,71 +3,41 @@
 
 .about-section {
     width: 100%;
-    height: 100vh ;
+    height: 100vh;
     max-height: 768px;
     position: relative;
     padding-bottom: 0;
     padding-top: 160px !important;
-
-
-    .background {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: -1;
-        display: flex;
-
-        flex-direction: row;
-
-        .background-wave {
-            height: 100%;
-            width: 100%;
-            overflow-x: hidden;
-
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 95%);
-            background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 90%);
-            background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 90%);
-            top: 0;
-            left: 0;
-        }
-    }
+    background: #171717;
 
     .about-content {
         justify-content: space-between;
+        align-items: center;
         display: flex;
         flex-direction: row;
 
         .details-section {
             display: flex;
             flex-direction: column;
-            width: 70%;
+            width: 60%;
             justify-content: space-between;
 
             h4 {
                 margin-bottom: 20px;
                 font-weight: 400;
+                color: #fff;
+                font-size: 2.4rem;
+                letter-spacing: 1px;
 
                 span {
-                    color: $accent-color;
+                    color: lighten($accent-color, 20);
                     font-weight: 700;
                 }
             }
 
             p {
                 line-height: 2.4rem;
-                text-align: justify;
+                color: #fff;
             }
 
             .cv {
@@ -77,13 +47,14 @@
                 margin-top: 20px;
 
                 h6 {
+                    color: #fff;
                     font-weight: 600;
                     margin-right: 10px;
 
                 }
 
                 a {
-                    background: $action-color;
+                    background: lighten($action-color, 15);
                     border: none;
                     outline: none;
                     border-radius: 2px;
@@ -100,40 +71,15 @@
             }
         }
 
-        .image-section {
-            display: flex;
+        .profileImg {
             width: 30%;
-            min-height: 300px;
-            height: 380px;
-            align-items: flex-end;
-            justify-content: flex-end;
-
-            .profile-image {
-                height: 100%;
-                position: relative;
 
 
-                .img-background {
-                    width: 100%;
-                    height: 350px;
-                    border-radius: 0 40% 0 30%;
-                    background: rgba(68, 88, 92, 0.274);
-                    position: absolute;
-                    bottom: 0;
-                    z-index: -1;
-
-                }
-
-                .image {
-                    height: 100%;
-
-                    img {
-                        height: 100%;
-                        width: auto;
-                        pointer-events: none;
-
-                    }
-                }
+            img{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                object-position: center; 
             }
         }
 
@@ -175,14 +121,14 @@
 }
 
 @media screen and (max-width: $smallScreen) {
-    .about-section{
-        .background{
-            display : none;
+    .about-section {
+        .background {
+            display: none;
         }
 
-        .container{
-            .about-content{
-                h4{
+        .container {
+            .about-content {
+                h4 {
                     font-size: 1.5rem;
                 }
             }
@@ -192,6 +138,6 @@
     .cv {
         justify-content: space-between;
         flex-wrap: wrap;
-        height : 100px;
+        height: 100px;
     }
 }

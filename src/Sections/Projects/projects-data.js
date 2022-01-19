@@ -1,9 +1,9 @@
-import keeper from './Keeper.png';
-import AMDb from './AMDb.png';
-import Weather from './Weather.png';
-import Netflix from './Netflix.png';
-import Finder from './Finder.png';
-import Booklist from './Booklist.png';
+import keeper from './Keeper.webp';
+import AMDb from './AMDb.webp';
+import Weather from './Weather.webp';
+import Netflix from './Netflix.webp';
+import Finder from './Finder.webp';
+import Booklist from './Booklist.webp';
 
 export const data = [{
         name: "Keeper",
