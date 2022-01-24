@@ -7,7 +7,6 @@
     max-height: 768px;
     position: relative;
     padding-bottom: 0;
-    padding-top: 160px !important;
     background: #171717;
 
     .about-content {
@@ -131,7 +130,7 @@
 @media screen and (max-width: $smallScreen) {
     
     .about-section {
-        padding-top: 80px !important;
+        // padding-top: 80px !important;
 
         .about-content {
     
@@ -159,6 +158,23 @@
                     justify-self: center;
                     img {
                         width:200px;
+                    }
+                }
+
+                .grid-1{
+                    h4{
+                        font-size: 1.4rem;
+                    }
+                    span{
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .grid-2{
+                    p{
+                        font-size: 1.2rem;
+                        line-height: 1.4rem;
+                        text-align: justify;
                     }
                 }
         }

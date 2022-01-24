@@ -28,14 +28,13 @@ const Skills = ({setActiveSection}) => {
                 width: 0
             },
             {
-                duration: 1,
+                duration: 0.5,
                 width: "100%",
-                ease: "power2",
+                ease: "ease-out",
                 scrollTrigger:{
                     trigger: element.querySelector(".skill-card"),
                     start: "top center",
                     end: "bottom center+=10",
-                    // scrub: true
                 },
                 
             }

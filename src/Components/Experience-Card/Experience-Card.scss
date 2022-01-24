@@ -41,7 +41,7 @@
             }
 
             .position {
-                margin: 10px 0;
+                margin: 5px 0 10px 0;
 
                 h6 {
                     font-weight: 400;
@@ -155,11 +155,15 @@
                     height: 20px;
                 }
 
-                div h6{
-                    font-size: 1.1rem;
-                }
-                div p{
+                .organization h6, .position h6{
                     font-size: 1rem;
+                    line-height: 1.4rem;
+                }
+
+                .desc p{
+                    font-size: 1rem;
+                    line-height: 1.4rem;
+
                 }
             }
         }

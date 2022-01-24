@@ -8,17 +8,29 @@ header {
     top: 0;
     z-index: 3;
     transition: all 0.2s ease-out;
-    
-    &.white-header{
+
+    &.white-header {
         background: #fff;
         box-shadow: 0 0 4px;
 
 
-        .navbar .navbar-links ul li a{
-            color : #171717;
+        .navbar .navbar-links ul li a {
+            color: #171717;
 
         }
-        
+
+        .navbar .navbar-links ul li.active {
+            a {
+                color: $action-color;
+            }
+
+            &::after,
+            &::before {
+                background-color: $action-color;
+
+            }
+        }
+
     }
 
     .navbar {
@@ -29,11 +41,11 @@ header {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        transition : all 0.2s ease-out;
+        transition: all 0.2s ease-out;
 
         .navbar-links {
             width: 100%;
-            transition : all 0.2s ease-out;
+            transition: all 0.2s ease-out;
 
             ul {
                 display: flex;
@@ -57,7 +69,8 @@ header {
 
                 li.active {
                     a {
-                        color: lighten($action-color,25);
+                        color: lighten($action-color, 25);
+                        ;
                         font-weight: 700;
                     }
 
@@ -69,7 +82,8 @@ header {
                         animation: activeLink 0.5s ease-in-out;
                         position: absolute;
                         height: 2px;
-                        background-color: lighten($action-color,25);
+                        background-color: lighten($action-color, 25);
+                        ;
                         bottom: 0;
                         left: 0;
                         width: 100%;
@@ -92,95 +106,107 @@ header {
     header {
         display: flex;
         flex-direction: row;
-        .container{
+
+        &.white-header {
+            .navbar .navbar-links {
+                background-color: #fff;
+
+            }
+        }
+
+        .container {
             display: flex;
             align-items: center;
             justify-content: flex-end;
         }
-                
+
         .navbar {
-            position : fixed;
-            top : 0;
-            left : 0;
-            width : 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             max-width: 100vw;
-            height : 100vh;
-            background: rgba(rgb(70, 70, 70),0.7);
+            height: 100vh;
+            background: rgba(rgb(70, 70, 70), 0.7);
             opacity: 0;
             pointer-events: none;
 
-            .navbar-links{
+            .navbar-links {
                 background: $header-background-color;
-                height : 100%;
-                width : 300px;
-                display : flex;
+                height: 100%;
+                width: 300px;
+                display: flex;
                 align-items: center;
                 opacity: 0;
-                transform : translateX(-300px);
-                
-                ul{
+                transform: translateX(-300px);
+
+                ul {
                     flex-direction: column;
-                    width : 150px;
-                    height : 350px;
+                    width: 150px;
+                    height: 350px;
                     margin: auto;
                     align-items: center;
-                    li{
-                        a{
+
+                    li {
+                        a {
                             font-size: 1.2rem;
                         }
                     }
                 }
             }
+
+
         }
+
         
+
         .menu-btn {
             display: block;
             z-index: 3;
-            
-            
+
+
             .icon {
                 fill: #fff;
-                width : 28px;
-                height : 28px;
+                width: 28px;
+                height: 28px;
                 pointer-events: none;
             }
         }
 
 
-        
-        &.open{
+
+        &.open {
             .navbar {
                 opacity: 1;
                 pointer-events: all;
-    
-                .navbar-links{
+
+                .navbar-links {
                     opacity: 1;
-                    transform : translateX(0);
+                    transform: translateX(0);
                     z-index: 2;
                 }
             }
         }
 
-        &.white-header{
-            .menu-btn .icon{
+        &.white-header {
+            .menu-btn .icon {
                 fill: #171717;
             }
 
-            .navbar .navbar-links ul li:not(.active) a{
-                color: #fff;
-            }
         }
     }
 }
 
-@keyframes activeLink{
+@keyframes activeLink {
     0% {
         width: 0%;
     }
-    25%{
+
+    60% {
         width: 0%;
     }
-    100%{
+
+    100% {
         width: 100%;
     }
 }
