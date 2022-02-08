@@ -48,6 +48,7 @@
 
             .MuiLinearProgress-barColorPrimary {
                 background-color: #222;
+                width: 0;
             }
 
             .MuiTypography-body2 {
@@ -60,6 +61,23 @@
 
     }
 
+}
+
+.active-skill-card{
+    .MuiLinearProgress-barColorPrimary{
+        animation: fullWidthCard 0.5s ease-out;   
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes fullWidthCard{
+    0% {
+        width: 0;
+    }
+
+    100%{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: $smallScreen) {

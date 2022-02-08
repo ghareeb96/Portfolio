@@ -1,11 +1,11 @@
-import React, {useRef, useEffect} from 'react'
+import React, { useRef, useEffect } from 'react'
 import "./Skills.scss"
 import { data } from "./skills-data"
 import SkillCard from "../../Components/Skill-Card/Skill-Card"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Skills = ({setActiveSection}) => {
+const Skills = ({ setActiveSection }) => {
     gsap.registerPlugin(ScrollTrigger);
     const skillsSection = useRef(null)
 
@@ -13,32 +13,38 @@ const Skills = ({setActiveSection}) => {
         const element = skillsSection.current;
 
         ScrollTrigger.create({
-            trigger : element,
+            trigger: element,
             start: "top center",
             end: "bottom center",
-            onEnter : ()=> setActiveSection("Skills"),
-            onEnterBack: ()=> setActiveSection("Skills"),
-            
+            onEnter: () => {
+                setActiveSection("Skills")
+                document.querySelectorAll(".skill-card").forEach(item=>{
+                    item.classList.add("active-skill-card")
+                })
+            }
+            ,
+            onEnterBack: () => setActiveSection("Skills"),
+
         })
 
 
-        gsap.fromTo(
-            element.querySelectorAll(".MuiLinearProgress-barColorPrimary"),
-            {
-                width: 0
-            },
-            {
-                duration: 0.5,
-                width: "100%",
-                ease: "ease-out",
-                scrollTrigger:{
-                    trigger: element.querySelector(".skill-card"),
-                    start: "top center",
-                    end: "bottom center+=10",
-                },
-                
-            }
-        )
+        // gsap.to(
+        //     element.querySelectorAll(".MuiLinearProgress-barColorPrimary"),
+        //     // {
+        //     //     // width: 0
+        //     // },
+        //     {
+        //         // duration: 0.5,
+        //         // width: "100%",
+        //         // ease: "ease-out",
+        //         scrollTrigger:{
+        //             trigger: element.querySelector(".skill-card"),
+        //             start: "top center",
+        //             end: "bottom center+=10",
+        //         },
+
+        //     }
+        // )
     }, [setActiveSection])
 
     return (
