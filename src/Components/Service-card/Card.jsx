@@ -17,7 +17,7 @@ const Card = ({ data }) => {
 
             appendElement(data.icon, data.id)
         }
-    })
+    },[])
 
 
     return (

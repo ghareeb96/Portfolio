@@ -18,7 +18,7 @@ const SkillCard = ({ data }) => {
         if (data.icon) {
             appendElement(data.icon, data.id)
         }
-    })
+    },[])
 
 
     return (

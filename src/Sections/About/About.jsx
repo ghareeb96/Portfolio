@@ -2,22 +2,21 @@ import React, { useEffect, useRef } from 'react'
 import "./About.scss";
 import profileImg from '../../Assets/Images/ProfileImg.webp';
 import CV from "./Ghareeb.pdf";
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 const About = ({ setActiveSection }) => {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     const aboutSection = useRef(null)
 
-    useEffect(() => {
-        const element = aboutSection.current
-        ScrollTrigger.create({
-            trigger: element,
-            end: "bottom center",
-            onEnterBack: () => setActiveSection("About")
-        })
-    }, [setActiveSection])
+    // useEffect(() => {
+    //     const element = aboutSection.current
+    //     ScrollTrigger.create({
+    //         trigger: element,
+    //         end: "bottom center",
+    //         onEnterBack: () => setActiveSection("About")
+    //     })
+    // }, [])
 
     return (
         <div className="section about-section" id="About" ref={aboutSection}>

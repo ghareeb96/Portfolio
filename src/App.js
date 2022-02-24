@@ -7,12 +7,9 @@ import Skills from "./Sections/Skills/Skills"
 import Experience from "./Sections/Experience/Experience"
 import Projects from "./Sections/Projects/Projects"
 import Contact from './Sections/Contact/Contact';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
 function App() {
-  gsap.registerPlugin(ScrollTrigger)
 
   const [activeSection, setActiveSection] = useState("About")
 
@@ -21,6 +18,7 @@ function App() {
   return (
     <div className="app">
 
+    
       <Header
         activeSection={activeSection}
       />
@@ -42,6 +40,7 @@ function App() {
       <Contact
         setActiveSection={setActiveSection}
       />
+
     </div>
   );
 }

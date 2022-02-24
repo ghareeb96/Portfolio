@@ -1,10 +1,6 @@
 @import "../../app.scss";
 
 .experience-section {
-    // background : url('./background.webp') !important;
-    
-
-
     .timeline-container {
 
         width: 100%;
@@ -36,7 +32,7 @@
     
         .timeline-container {
             .timeline {
-                width: fit-content;
+                // width: fit-content;
                 margin: auto;
                 &::after {
                     left: 5%;

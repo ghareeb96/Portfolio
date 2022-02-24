@@ -16,7 +16,8 @@ const ExperienceCard = ({ data, pos }) => {
         if (data.icon) {
             appendElement(data.icon, data.id)
         }
-    })
+    },[])
+    
     return (
         <div className={pos === "left" ? "experience-card left-sided" : "experience-card right-sided"}>
             <div className="box-container">
