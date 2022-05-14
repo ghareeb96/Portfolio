@@ -2,50 +2,50 @@ import React, { useRef, useEffect } from 'react'
 import "./Skills.scss"
 import { data } from "./skills-data"
 import SkillCard from "../../Components/Skill-Card/Skill-Card"
-// import gsap from 'gsap';
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Skills = ({ setActiveSection }) => {
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
     const skillsSection = useRef(null)
 
-    // useEffect(() => {
-    //     const element = skillsSection.current;
+    useEffect(() => {
+        const element = skillsSection.current;
 
-    //     ScrollTrigger.create({
-    //         trigger: element,
-    //         start: "top center",
-    //         end: "bottom center",
-    //         onEnter: () => {
-    //             setActiveSection("Skills")
-    //             document.querySelectorAll(".skill-card").forEach(item=>{
-    //                 item.classList.add("active-skill-card")
-    //             })
-    //         }
-    //         ,
-    //         onEnterBack: () => setActiveSection("Skills"),
+        ScrollTrigger.create({
+            trigger: element,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => {
+                setActiveSection("Skills")
+                document.querySelectorAll(".skill-card").forEach(item=>{
+                    item.classList.add("active-skill-card")
+                })
+            }
+            ,
+            onEnterBack: () => setActiveSection("Skills"),
 
-    //     })
+        })
 
 
-    //     gsap.fromTo(
-    //         element.querySelectorAll(".MuiLinearProgress-barColorPrimary"),
-    //         {
-    //             width: 0
-    //         },
-    //         {
-    //             duration: 1.5,
-    //             width: "100%",
-    //             ease: "ease-out",
-    //             scrollTrigger:{
-    //                 trigger: element.querySelector(".skill-card"),
-    //                 start: "top center",
-    //                 end: "bottom center+=10",
-    //             },
+        gsap.from(
+            element.querySelectorAll(".progress-inner"),
+            {
+                width: 0,
+                duration: 1,
+                ease: "ease-out",
+                scrollTrigger:{
+                    trigger: element.querySelector(".skill-card"),
+                    start: "top center",
+                    end: "bottom center+=10",
+                },
+            },
+            {
+                
 
-    //         }
-    //     )
-    // }, [])
+            }
+        )
+    }, [])
 
     return (
         <div className="section skills-section" id="Skills" ref={skillsSection}>

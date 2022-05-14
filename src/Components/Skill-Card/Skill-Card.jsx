@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import "./Skill-Card.scss"
-import LinearProgressWithLabel from "./ProgressBar"
 
 
 const SkillCard = ({ data }) => {
@@ -32,7 +31,10 @@ const SkillCard = ({ data }) => {
 
                 </div>
                 <div className="progress-bar">
-                    <LinearProgressWithLabel value={data.rate} />
+                    <div className="progress-container">
+                        <div className="progress-inner" style={{width: data.rate +"%"}}></div>
+                    </div>
+                    {/* <LinearProgressWithLabel value={data.rate} /> */}
                 </div>
 
             </div>

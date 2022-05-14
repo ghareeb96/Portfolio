@@ -7,7 +7,8 @@
     max-height: 768px;
     padding-bottom: 0;
     background: #171717;
-    .container{
+
+    .container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -27,11 +28,11 @@
         .grid-2 {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
 
             h4 {
-                margin-bottom: 8px;
-                font-weight: 400;
+                margin-bottom: 5px;
+                font-weight: 600;
                 color: #fff;
                 font-size: 3rem;
                 letter-spacing: 1px;
@@ -47,8 +48,10 @@
             }
 
             p {
-                line-height: 2.4rem;
+                line-height: 2.8rem;
+                font-size: 1.8rem;
                 color: #fff;
+                text-align: justify;
             }
 
             .cv {
@@ -90,6 +93,7 @@
 
         .grid-2 {
             grid-area: grid-2;
+            align-self: flex-start;
         }
 
         .profileImg {
@@ -109,46 +113,54 @@
 @media screen and (max-width: $mediumScreen) {
 
     .about-section {
-        height: auto;
-        max-height: max-content;
+        .about-content {
+            .grid-1 {
+
+                h4 {
+                    font-size: 2.5rem;
+                }
+
+            }
+
+            .grid-2 {
+                p {
+                    font-size: 1.5rem;
+                    line-height: 2.2rem;
+                }
+            }
+
+            .profileImg {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $smallScreen) {
+
+    .about-section {
+
 
         .about-content {
             grid-template-areas:
                 "grid-1 grid-1 Img"
                 "grid-2 grid-2 grid-2";
 
-                .grid-1{
-                    // align-self: center;
-
+            .grid-1 {
+                align-self: center;
+                h4 {
+                    font-size: 2rem;
                     span{
-                        display: block  ;
+                        display: block;
                     }
                 }
-                .profileImg{
-                    align-self: end;
-                }
-        }
-    }
-}
-
-@media screen and (max-width: $smallScreen) {
-    
-    .about-section {
-        // padding-top: 80px !important;
-
-        .about-content {
-    
-                .grid-1{
-                    h4{
-                        font-size: 2rem;
-                    }
-                }
+            }
         }
     }
 }
 
 @media screen and (max-width: $xSmallScreen) {
-    
+
     .about-section {
         .about-content {
             grid-template-columns: 1fr;
@@ -158,29 +170,31 @@
                 "grid-1"
                 "grid-2";
 
-                .profileImg {
-                    justify-self: center;
-                    img {
-                        width:200px;
-                    }
+            .profileImg {
+                justify-self: center;
+
+                img {
+                    width: 200px;
+                }
+            }
+
+            .grid-1 {
+                h4 {
+                    font-size: 1.4rem;
                 }
 
-                .grid-1{
-                    h4{
-                        font-size: 1.4rem;
-                    }
-                    span{
-                        font-size: 1.6rem;
-                    }
+                span {
+                    font-size: 1.6rem;
                 }
+            }
 
-                .grid-2{
-                    p{
-                        font-size: 1.2rem;
-                        line-height: 1.4rem;
-                        text-align: justify;
-                    }
+            .grid-2 {
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.4rem;
+                    text-align: justify;
                 }
+            }
         }
     }
 }

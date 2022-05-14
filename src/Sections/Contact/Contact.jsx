@@ -8,11 +8,11 @@ import { ReactComponent as Facebook } from "../../Assets/Icons/Social/facebook.s
 import { ReactComponent as Twitter } from "../../Assets/Icons/Social/twitter.svg"
 import { ReactComponent as Github } from "../../Assets/Icons/Social/github.svg"
 import { ReactComponent as Linkedin } from "../../Assets/Icons/Social/linkedin.svg"
-// import gsap from 'gsap';
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Contact = ({setActiveSection}) => {
-    // gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
     const contactSection = useRef(null)
 
     const initialData = { sender: '', email: '', message: '' }
@@ -31,17 +31,17 @@ const Contact = ({setActiveSection}) => {
         }
     }
 
-    // useEffect(()=>{
+    useEffect(()=>{
         const element = contactSection.current
 
-    //     ScrollTrigger.create({
-    //         trigger : element,
-    //         start: "top center",
-    //         end: "bottom center",
-    //         onEnter : ()=> setActiveSection("Contact"),
-    //         onEnterBack: ()=> setActiveSection("Contact"),
-    //     })
-    // },[])
+        ScrollTrigger.create({
+            trigger : element,
+            start: "top center",
+            end: "bottom center",
+            onEnter : ()=> setActiveSection("Contact"),
+            onEnterBack: ()=> setActiveSection("Contact"),
+        })
+    },[])
 
     return (
         <div className="section contact-section" id="Contact" ref={contactSection}>
