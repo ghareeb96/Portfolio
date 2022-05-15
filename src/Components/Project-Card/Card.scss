@@ -63,7 +63,7 @@
                 border-radius: 5px;
                 cursor: pointer;
                 text-decoration: none;
-
+                pointer-events: none;
 
                 .icon {
                     width: 25px;
@@ -92,15 +92,86 @@
     &:hover {
         .project-overlay {
             opacity: 1;
-            pointer-events: all;
+
+
+        }
+    }
+
+    &:active {
+        .project-overlay {
+            .project-actions {
+
+                a {
+
+                    pointer-events: all;
+                }
+            }
         }
     }
 }
 
 
-@media screen and(max-width: $xSmallScreen){
+@media screen and(max-width: $smallScreen) {
     .project-card{
+        height: 300px;
+        display: flex;
+        align-items: center;
+
+        .project-screen{
+            height: 70%;
+            
+        }
+
+        .project-overlay{
+            opacity: 1;
+            background: none;
+            justify-content: space-between;
+
+            .title{
+                padding: 8px 0;
+            }
+
+            .project-actions{
+                a{
+                    width: 50%;
+                    height: 45px;
+                    border-radius: 0;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+@media screen and(max-width: $xSmallScreen) {
+    .project-card{
+        height: 260px;
         width: 300px;
-        height: 190px;
+
+        .project-screen{
+            height: 70%;
+            
+        }
+
+        .project-overlay{
+
+            .title{
+                width: 100%;
+                padding: 6px;
+                h4{
+                    text-align: center;
+                    font-size:1.4rem ;
+                }
+            }
+
+            .project-actions{
+                a{
+                    height: 40px;
+                }
+            }
+
+        }
     }
 }

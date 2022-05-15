@@ -19,12 +19,12 @@ const Services = ({setActiveSection}) => {
             end: "bottom center",
             onEnter : ()=> {
                 setActiveSection("Services")
-                // document.querySelector("header").classList.add("white-header")
+                document.querySelector("header").classList.add("white-header")
             },
             onEnterBack: ()=> setActiveSection("Services"),
             onLeaveBack:()=> {
                 setActiveSection("About")
-                // document.querySelector("header").classList.remove("white-header")
+                document.querySelector("header").classList.remove("white-header")
             }
             
         })

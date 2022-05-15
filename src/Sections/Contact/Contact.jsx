@@ -14,7 +14,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Contact = ({setActiveSection}) => {
     gsap.registerPlugin(ScrollTrigger);
     const contactSection = useRef(null)
-
     const initialData = { sender: '', email: '', message: '' }
     const [formData, setFormData] = useState(initialData)
 
@@ -101,7 +100,7 @@ const Contact = ({setActiveSection}) => {
 
             </div>
             <div className="copyrights">
-                <h6>Copyright © 2021 Ghareeb | All rights reserved</h6>
+                <h6>Copyright © {new Date().getFullYear()} Ghareeb | All rights reserved</h6>
             </div>
         </div>
     )
