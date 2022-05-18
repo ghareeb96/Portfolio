@@ -49,6 +49,8 @@ const Skills = ({ setActiveSection }) => {
 
     return (
         <div className="section skills-section" id="Skills" ref={skillsSection}>
+            <div className="bg"></div>
+            {/* <div className="bg-overlay"></div> */}
             <div className="container">
 
 

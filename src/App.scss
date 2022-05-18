@@ -1,5 +1,6 @@
 @import './vars';
 
+
 * {
     margin: 0;
     padding: 0;
@@ -21,8 +22,18 @@ body {
 
 }
 
+@function generateRandom($min, $max) {
+    @return random($max -$min)+$min+px;
+}
 
-h1,h2,h3,h4,h5,h6,p {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     pointer-events: none;
     color: #000;
 }
@@ -70,45 +81,67 @@ svg {
     transition: all 0.2s ease-out;
 }
 
+
 .app {
     width: 100%;
+    position: relative;
+
+    .random-shapes {
+        height: 70%;
+        position: absolute;
+        top: calc(100vh + 200px);
+
+        .dots-icon {
+            position: absolute;
+            opacity: 0.5;
+
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    left: generateRandom(0, 1200);
+                    width: generateRandom(100, 150);
+                    top: generateRandom(($i - 1)*200, $i*350)
+                }
+
+            }
+
+            height: auto;
+        }
+
+    //     .squares {
+
+    //         @for $j from 1 through 5 {
+    //             .square:nth-child(#{$j}) {
+    //             background-color: $accent-color;
+    //             width: 100px;
+    //             height: 100px;
+                
+    //                 top: generateRandom(($j - 1)*200, $j*350);
+    //                 left: generateRandom(0, 1200);
+    //             }
+
+    //         }
+    //         position: absolute;
+    //         opacity: random(100 * 0.1);
+
+
+    //     }
+    }
 }
 
 
 .container {
     width: 80%;
-    max-width : $xLargeScreen;
+    max-width: $xLargeScreen;
     margin: auto;
-    height : 100%;
+    height: 100%;
 }
 
-.section{
+.section {
     width: 100vw;
-    padding : 80px 0;
-    min-height : 100vh;
+    padding: 80px 0;
 
-    
+
 }
-
-// .secondary-section{
-//     position: relative;
-//     background-size: cover !important;
-//     background-position: center !important;
-//     background-repeat: no-repeat !important;
-//     background-attachment: fixed !important;
-
-//    .overlay{
-//         content : '';
-//         position : absolute;
-//         width : 100%;
-//         height : 100%;
-//         top : 0;
-//         left : 0;
-//         background : rgba($primary-background-color, 0.6);
-//         z-index: 1;
-//     }
-// }
-
 
 
 .headline {
@@ -117,44 +150,42 @@ svg {
     flex-direction: row;
     z-index: 2 !important;
 
-    .left-line{
-        width : 6px;
-        margin-right : 10px;
-        background: $accent-color ;
+    .left-line {
+        width: 6px;
+        margin-right: 10px;
+        background: $accent-color;
         z-index: 2 !important;
 
     }
 
-    .headline-typo{
+    .headline-typo {
         z-index: 2 !important;
-        h5{
-            font-weight : 700;
+
+        h5 {
+            font-weight: 700;
             letter-spacing: 2px;
 
         }
     }
 }
 
-.upper{
-    // height: 200vh;
 
-}
-
-.wrapper{
+.wrapper {
     width: 100%;
     height: 30px;
     background: rgb(122, 53, 53);
     display: flex;
     align-items: center;
     justify-content: center;
-    .outer{
+
+    .outer {
         width: 90%;
         height: 20px;
         position: relative;
         padding: 4px;
         background: #fff;
 
-        .inner{
+        .inner {
             height: 100%;
             background: #000;
             animation: fullWidth 1.5s ease-out;
@@ -166,19 +197,21 @@ svg {
     0% {
         width: 0;
     }
-    50%{
+
+    50% {
         width: 0;
     }
-    100%{
+
+    100% {
         width: 100%;
     }
 }
 
+
+
 @media screen and (max-width: $xSmallScreen) {
 
-    .container{
-        width : 85%;
+    .container {
+        width: 85%;
     }
 }
-
-

@@ -5,9 +5,9 @@ header {
     background: $header-background-color;
     width: 100vw;
     position: fixed;
-    top: 0;
     z-index: 3;
     transition: all 0.2s ease-out;
+    top: 0;
 
     &.white-header {
         background: #fff;

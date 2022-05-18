@@ -69,7 +69,7 @@ const Contact = ({setActiveSection}) => {
 
                         <div className="social-links">
                             <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook className='icon' /></a>
-                            <a href="https://twitter.com/__Ghareeeb" target="_blank" rel="noreferrer"><Twitter className='icon' /></a>
+                            <a href="https://twitter.com/_urFavStranger" target="_blank" rel="noreferrer"><Twitter className='icon' /></a>
                             <a href="https://github.com/ghareeb96" target="_blank" rel="noreferrer"><Github className='icon' /></a>
                             <a href="https://www.linkedin.com/in/ghareeb-shehata" target="_blank" rel="noreferrer"><Linkedin className='icon' /></a>
                         </div>
@@ -79,15 +79,15 @@ const Contact = ({setActiveSection}) => {
                         <div className="form-container">
                             <form>
                                 <div className="form-input">
-                                    <h6>Your name</h6>
+                                    <h6>Name</h6>
                                     <input type="text" name="sender" value={formData.sender} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
-                                    <h6>Your Email</h6>
+                                    <h6>Email</h6>
                                     <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
-                                    <h6>Your Message</h6>
+                                    <h6>Message</h6>
                                     <textarea rows="6" name="message" value={formData.message} onChange={handleChange} required />
                                 </div>
                                 <div className="btn submit-btn">
