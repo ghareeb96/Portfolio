@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.scss';
 import Header from "./Components/Header/Header"
 import About from "./Sections/About/About"
@@ -8,33 +8,36 @@ import Experience from "./Sections/Experience/Experience"
 import Projects from "./Sections/Projects/Projects"
 import Contact from './Sections/Contact/Contact';
 import { ReactComponent as Dots } from './dots.svg'
+import { ReactComponent as Square } from './square.svg'
+import gsap from 'gsap';
+
 
 
 function App() {
 
   const [activeSection, setActiveSection] = useState("About")
-  const dots = Array(10).fill(1)
+  const shapes = Array(10).fill(1)
 
-  return (
+    return (
     <div className="app">
-      <div className="random-shapes">
+      <div className="shapes">
 
         {
-          dots.map(dot => (
-            <Dots
-              key={dot.index}
-              className='dots-icon'
-            />
+          shapes.map(shape => (
+            <>
+              <Dots
+                key={shape.index}
+                className='dots-icon'
+              />
+
+              <Square
+                key={shape.index}
+                className={'square'}
+              />
+            </>
           ))
         }
 
-        {/* <div className="squares">
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-          <div className="square"></div>
-        </div> */}
       </div>
 
 

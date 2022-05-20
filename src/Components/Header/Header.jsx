@@ -17,12 +17,12 @@ const Nav = ({ activeSection }) => {
             headerElement.classList.remove("open");
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         const links = document.querySelectorAll(".nav-link")
-        links.forEach(link=> link.classList.remove("active"))
+        links.forEach(link => link.classList.remove("active"))
 
         document.querySelector(`#${activeSection}-link`).classList.add("active")
-    },[activeSection])
+    }, [activeSection])
 
 
 
@@ -30,7 +30,12 @@ const Nav = ({ activeSection }) => {
         <header id="header" >
             <div className="container">
 
+
+                <div className="logo">
+                    <h2>GHAREEB</h2>
+                </div>
                 <nav className="navbar" onClick={closeSidebar}>
+
                     <div className="navbar-links">
                         <ul>
                             <li className="nav-link" id="About-link"><a href="#About">About</a></li>

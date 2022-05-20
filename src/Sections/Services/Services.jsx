@@ -47,6 +47,8 @@ const Services = ({setActiveSection}) => {
                 }
             }
         )
+
+        
     },[])
 
 

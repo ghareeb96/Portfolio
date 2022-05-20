@@ -83,48 +83,36 @@ svg {
 
 
 .app {
+    overflow: hidden;
     width: 100%;
     position: relative;
 
-    .random-shapes {
+    .shapes {
         height: 70%;
         position: absolute;
-        top: calc(100vh + 200px);
+        top: calc(100vh);
 
-        .dots-icon {
+        .dots-icon, .square {
             position: absolute;
-            opacity: 0.5;
+            transition: all 120s linear;
 
-            @for $i from 1 through 10 {
+            @for $i from 1 through 20 {
                 &:nth-child(#{$i}) {
                     left: generateRandom(0, 1200);
-                    width: generateRandom(100, 150);
-                    top: generateRandom(($i - 1)*200, $i*350)
+                    width: generateRandom(50, 120);
+                    top: generateRandom(($i - 1)*150, $i*150);
+                    opacity: random(3) * 0.1;
+                    transform: translate(generateRandom(-300,500),generateRandom(-500,800));
                 }
 
             }
 
             height: auto;
         }
-
-    //     .squares {
-
-    //         @for $j from 1 through 5 {
-    //             .square:nth-child(#{$j}) {
-    //             background-color: $accent-color;
-    //             width: 100px;
-    //             height: 100px;
-                
-    //                 top: generateRandom(($j - 1)*200, $j*350);
-    //                 left: generateRandom(0, 1200);
-    //             }
-
-    //         }
-    //         position: absolute;
-    //         opacity: random(100 * 0.1);
-
-
-    //     }
+        .square{
+            background-color: $accent-color;
+            fill: $accent-color;
+        }
     }
 }
 
@@ -207,11 +195,68 @@ svg {
     }
 }
 
+@media screen and (max-width: $mediumScreen) {
 
+    .container{
+        width: 90%;
+    }
+    .app {
+        .shapes {               
+            .dots-icon, .square {
+                @for $i from 1 through 20 {
+                    &:nth-child(#{$i}) {
+                        left: generateRandom(0, 900);
+                        width: generateRandom(50, 100);
+                        top: generateRandom(($i - 1)*250, $i*250)
+                    }
+    
+                }
+
+            }
+    
+        }
+    }
+    
+}
+@media screen and (max-width: $smallScreen) {
+
+    .app {
+        .shapes {               
+            .dots-icon, .square {
+                @for $i from 1 through 20 {
+                    &:nth-child(#{$i}) {
+                        left: generateRandom(0, 650);
+                        top: generateRandom(($i - 1)*300, $i*300)
+
+                    }
+    
+                }
+
+            }
+    
+        }
+    }
+
+}
 
 @media screen and (max-width: $xSmallScreen) {
 
-    .container {
-        width: 85%;
+
+    .app {
+        .shapes {               
+            .dots-icon, .square {
+                @for $i from 1 through 20 {
+                    &:nth-child(#{$i}) {
+                        left: generateRandom(0, 350);
+                        top: generateRandom(($i - 1)*350, $i*350)
+
+                    }
+    
+                }
+
+            }
+    
+        }
     }
+
 }

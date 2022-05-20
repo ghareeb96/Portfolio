@@ -9,10 +9,103 @@ header {
     transition: all 0.2s ease-out;
     top: 0;
 
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .logo {
+            transition: all 0.5s ease-out;
+            opacity: 0;
+            width: 0;
+            z-index: 4;
+
+            h2 {
+                color: $header-background-color;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+        }
+
+        .navbar {
+            width: 100%;
+            position: relative;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease-out;
+
+
+
+            .navbar-links {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                max-width: 600px;
+                width: 100%;
+                transition: all 0.2s ease-out;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    list-style: none;
+                    justify-content: space-between;
+
+                    li {
+                        padding: 3px 0;
+
+                        a {
+                            font-weight: 400;
+                            font-size: 1rem;
+                            text-decoration: none;
+                            color: #fff;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                            transition: all 0.2s;
+                        }
+                    }
+
+                    li.active {
+                        a {
+                            color: lighten($action-color, 25);
+                            ;
+                            font-weight: 700;
+                        }
+
+                        position : relative;
+
+                        &::after,
+                        &::before {
+                            content: "";
+                            animation: activeLink 0.5s ease-in-out;
+                            position: absolute;
+                            height: 2px;
+                            background-color: lighten($action-color, 25);
+                            ;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                        }
+
+                        &::before {
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &.white-header {
         background: #fff;
         box-shadow: 0 0 4px;
 
+        .logo {
+            opacity: 1;
+
+        }
 
         .navbar .navbar-links ul li a {
             color: #171717;
@@ -31,138 +124,98 @@ header {
             }
         }
 
-    }
-
-    .navbar {
-        height: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        transition: all 0.2s ease-out;
-
-        .navbar-links {
-            width: 100%;
-            transition: all 0.2s ease-out;
-
-            ul {
-                display: flex;
-                flex-direction: row;
-                list-style: none;
-                justify-content: space-between;
-
-                li {
-                    padding: 3px 0;
-
-                    a {
-                        font-weight: 400;
-                        font-size: 1rem;
-                        text-decoration: none;
-                        color: #fff;
-                        letter-spacing: 1px;
-                        text-transform: uppercase;
-                        transition: all 0.2s;
-                    }
-                }
-
-                li.active {
-                    a {
-                        color: lighten($action-color, 25);
-                        ;
-                        font-weight: 700;
-                    }
-
-                    position : relative;
-
-                    &::after,
-                    &::before {
-                        content: "";
-                        animation: activeLink 0.5s ease-in-out;
-                        position: absolute;
-                        height: 2px;
-                        background-color: lighten($action-color, 25);
-                        ;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                    }
-
-                    &::before {
-                        top: 0;
-                    }
-                }
+        .navbar {
+            .navbar-links {
+                right: 0;
+                left: auto;
+                transform: translateX(0);
             }
+
+
         }
+
     }
+
+
 
     .menu-btn {
         display: none;
     }
 }
 
-@media screen and(max-width: $smallScreen) {
+@media screen and(max-width: $mediumScreen) {
     header {
-        display: flex;
-        flex-direction: row;
 
         &.white-header {
-            .navbar .navbar-links {
-                background-color: #fff;
 
+            .navbar .navbar-links ul li a {
+                font-size: 0.9rem;
+                letter-spacing: 0;
             }
-        }
 
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            max-width: 100vw;
-            height: 100vh;
-            background: rgba(rgb(70, 70, 70), 0.7);
-            opacity: 0;
-            pointer-events: none;
-
-            .navbar-links {
-                background: $header-background-color;
-                height: 100%;
-                width: 300px;
-                display: flex;
-                align-items: center;
-                opacity: 0;
-                transform: translateX(-300px);
-
-                ul {
-                    flex-direction: column;
-                    width: 150px;
-                    height: 350px;
-                    margin: auto;
-                    align-items: center;
-
-                    li {
-                        a {
-                            font-size: 1.2rem;
-                        }
-                    }
+            .navbar {
+                .navbar-links {
+                    max-width: 480px;
                 }
             }
-
-
         }
 
-        
+    }
+}
+
+@media screen and(max-width: $smallScreen) {
+    header {
+        z-index: 4;
+
+        .container {
+            position: relative;
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(rgb(70, 70, 70), 0.7);
+                opacity: 0;
+                z-index: 2;
+                pointer-events: none;
+
+                .navbar-links {
+                    position: static;
+                    width: 300px;
+                    background-color: $header-background-color;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    transform: translateX(-300px);
+
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        width: 150px;
+                        height: 350px;
+                        margin: auto;
+                        align-items: center;
+
+                        li a {
+                            font-size: 1.2rem;
+                        }
+
+                    }
+
+                }
+            }
+        }
 
         .menu-btn {
             display: block;
-            z-index: 3;
+            z-index: 4;
+            position: absolute;
+            right: 0;
 
 
             .icon {
@@ -191,6 +244,11 @@ header {
         &.white-header {
             .menu-btn .icon {
                 fill: #171717;
+            }
+
+            .navbar .navbar-links {
+                background-color: #fff;
+
             }
 
         }
