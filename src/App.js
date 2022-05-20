@@ -18,6 +18,27 @@ function App() {
   const [activeSection, setActiveSection] = useState("About")
   const shapes = Array(10).fill(1)
 
+  useEffect(()=>{
+
+    const circles = document.querySelectorAll(".circle")
+
+    circles.forEach(circle =>{
+      let topRnd = Math.random() * (2000 - (-2000)) + (-2000)
+      let leftRnd = Math.random() * (500 - (-500)) + (-500)
+      gsap.to(circle, 
+        {
+          top: `+=${topRnd}px`,
+          left: `+=${leftRnd}px`,
+          duration: 100,
+          repeat: -1,
+          yoyo: true,
+          ease: "none"
+
+        })
+    })
+
+  },[])
+
     return (
     <div className="app">
       <div className="shapes">
@@ -32,7 +53,7 @@ function App() {
 
               <Square
                 key={shape.index}
-                className={'square'}
+                className={'circle'}
               />
             </>
           ))

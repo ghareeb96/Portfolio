@@ -1,6 +1,5 @@
 @import './vars';
 
-
 * {
     margin: 0;
     padding: 0;
@@ -91,10 +90,10 @@ svg {
         height: 70%;
         position: absolute;
         top: calc(100vh);
+        z-index: -1;
 
-        .dots-icon, .square {
+        .dots-icon, .circle {
             position: absolute;
-            transition: all 120s linear;
 
             @for $i from 1 through 20 {
                 &:nth-child(#{$i}) {
@@ -102,16 +101,17 @@ svg {
                     width: generateRandom(50, 120);
                     top: generateRandom(($i - 1)*150, $i*150);
                     opacity: random(3) * 0.1;
-                    transform: translate(generateRandom(-300,500),generateRandom(-500,800));
+
                 }
 
             }
 
             height: auto;
         }
-        .square{
+        .circle{
             background-color: $accent-color;
             fill: $accent-color;
+            border-radius: 50%;
         }
     }
 }
@@ -181,6 +181,7 @@ svg {
     }
 }
 
+
 @keyframes fullWidth {
     0% {
         width: 0;
@@ -195,6 +196,8 @@ svg {
     }
 }
 
+
+
 @media screen and (max-width: $mediumScreen) {
 
     .container{
@@ -202,7 +205,7 @@ svg {
     }
     .app {
         .shapes {               
-            .dots-icon, .square {
+            .dots-icon, .circle {
                 @for $i from 1 through 20 {
                     &:nth-child(#{$i}) {
                         left: generateRandom(0, 900);
@@ -222,7 +225,7 @@ svg {
 
     .app {
         .shapes {               
-            .dots-icon, .square {
+            .dots-icon, .circle {
                 @for $i from 1 through 20 {
                     &:nth-child(#{$i}) {
                         left: generateRandom(0, 650);
@@ -244,7 +247,7 @@ svg {
 
     .app {
         .shapes {               
-            .dots-icon, .square {
+            .dots-icon, .circle {
                 @for $i from 1 through 20 {
                     &:nth-child(#{$i}) {
                         left: generateRandom(0, 350);
