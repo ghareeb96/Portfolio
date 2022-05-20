@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.22a723ff.chunk.css",
-    "main.js": "/Portfolio/static/js/main.23a4c6fc.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.23a4c6fc.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.19156b28.chunk.css",
+    "main.js": "/Portfolio/static/js/main.ef083a85.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.ef083a85.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.c65a14fc.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.c65a14fc.js.map",
-    "static/js/2.c9f50b93.chunk.js": "/Portfolio/static/js/2.c9f50b93.chunk.js",
-    "static/js/2.c9f50b93.chunk.js.map": "/Portfolio/static/js/2.c9f50b93.chunk.js.map",
+    "static/js/2.25cd5036.chunk.js": "/Portfolio/static/js/2.25cd5036.chunk.js",
+    "static/js/2.25cd5036.chunk.js.map": "/Portfolio/static/js/2.25cd5036.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/css/main.22a723ff.chunk.css.map": "/Portfolio/static/css/main.22a723ff.chunk.css.map",
-    "static/js/2.c9f50b93.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.c9f50b93.chunk.js.LICENSE.txt",
+    "static/css/main.19156b28.chunk.css.map": "/Portfolio/static/css/main.19156b28.chunk.css.map",
+    "static/js/2.25cd5036.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.25cd5036.chunk.js.LICENSE.txt",
     "static/media/AMDb.497c3062.webp": "/Portfolio/static/media/AMDb.497c3062.webp",
     "static/media/Booklist.30b187b2.webp": "/Portfolio/static/media/Booklist.30b187b2.webp",
     "static/media/Finder.db82fc73.webp": "/Portfolio/static/media/Finder.db82fc73.webp",
@@ -27,12 +27,13 @@
     "static/media/mail.85eb66d2.svg": "/Portfolio/static/media/mail.85eb66d2.svg",
     "static/media/phone.a2958d26.svg": "/Portfolio/static/media/phone.a2958d26.svg",
     "static/media/preview.12cef2ec.svg": "/Portfolio/static/media/preview.12cef2ec.svg",
+    "static/media/square.1c3910a6.svg": "/Portfolio/static/media/square.1c3910a6.svg",
     "static/media/twitter.5ae9f4cf.svg": "/Portfolio/static/media/twitter.5ae9f4cf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c65a14fc.js",
-    "static/js/2.c9f50b93.chunk.js",
-    "static/css/main.22a723ff.chunk.css",
-    "static/js/main.23a4c6fc.chunk.js"
+    "static/js/2.25cd5036.chunk.js",
+    "static/css/main.19156b28.chunk.css",
+    "static/js/main.ef083a85.chunk.js"
   ]
 }
