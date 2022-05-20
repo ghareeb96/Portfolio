@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.19156b28.chunk.css",
-    "main.js": "/Portfolio/static/js/main.ef083a85.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.ef083a85.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.cc80d311.chunk.css",
+    "main.js": "/Portfolio/static/js/main.c7866868.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.c7866868.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.c65a14fc.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.c65a14fc.js.map",
     "static/js/2.25cd5036.chunk.js": "/Portfolio/static/js/2.25cd5036.chunk.js",
     "static/js/2.25cd5036.chunk.js.map": "/Portfolio/static/js/2.25cd5036.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/css/main.19156b28.chunk.css.map": "/Portfolio/static/css/main.19156b28.chunk.css.map",
+    "static/css/main.cc80d311.chunk.css.map": "/Portfolio/static/css/main.cc80d311.chunk.css.map",
     "static/js/2.25cd5036.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.25cd5036.chunk.js.LICENSE.txt",
     "static/media/AMDb.497c3062.webp": "/Portfolio/static/media/AMDb.497c3062.webp",
     "static/media/Booklist.30b187b2.webp": "/Portfolio/static/media/Booklist.30b187b2.webp",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.c65a14fc.js",
     "static/js/2.25cd5036.chunk.js",
-    "static/css/main.19156b28.chunk.css",
-    "static/js/main.ef083a85.chunk.js"
+    "static/css/main.cc80d311.chunk.css",
+    "static/js/main.c7866868.chunk.js"
   ]
 }
