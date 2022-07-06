@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react'
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import "./About.scss";
 import profileImg from '../../Assets/Images/ProfileImg.webp';
-// import CV from "./Ghareeb.pdf";
 
 
 const About = ({ setActiveSection }) => {
@@ -15,45 +14,45 @@ const About = ({ setActiveSection }) => {
     const paragraph = useRef(null)
     const img = useRef(null)
 
-    useEffect(()=>{
+    useEffect(() => {
         t1.from(hello.current,
             {
-                y : 20,
+                y: 20,
                 alpha: 0,
                 duration: 0.8,
                 ease: "ease-out"
             })
             .from(def.current,
-            {
-                y : 20,
-                alpha: 0,
-                duration: 0.8,
-                ease: "ease-out"
-            })
+                {
+                    y: 20,
+                    alpha: 0,
+                    duration: 0.8,
+                    ease: "ease-out"
+                })
             .from(img.current,
-            {
-                y : 20,
-                alpha: 0,
-                duration: 0.8,
-                ease: "ease-out"
-            },"<")
+                {
+                    y: 20,
+                    alpha: 0,
+                    duration: 0.8,
+                    ease: "ease-out"
+                }, "<")
             .from(paragraph.current,
-            {
-                y : 20,
-                alpha: 0,
-                duration: 0.8,
-                ease: "ease-out"
-            })
-            .fromTo(document.querySelector("header"), 
-            {
-                top: -50,
-                opacity: 0
-            },{
+                {
+                    y: 20,
+                    alpha: 0,
+                    duration: 0.8,
+                    ease: "ease-out"
+                })
+            .fromTo(document.querySelector("header"),
+                {
+                    top: -50,
+                    opacity: 0
+                }, {
                 top: 0,
                 opacity: 1,
                 duration: 0.5
             })
-    },[])
+    }, [])
 
 
     useEffect(() => {
@@ -75,15 +74,9 @@ const About = ({ setActiveSection }) => {
                         <h4 ref={def}>I am <span>Ghareeb Shehata</span></h4>
                     </div>
                     <div ref={paragraph} className="grid-2" >
-                        <p>Frontend web developer, Designing a nice-looking layout of a website and turning this design to code, Experienced in a set of skills, uses them to build an efficient output.
+                        <p>Frontend web developer, Designing and developing a nice-looking and efficient Projects.
                         </p>
-
-                        {/* <div className="cv">
-                            <h6>Interested to learn more ?</h6>
-                            <a target="_blank" href={CV} className="cv-btn" rel="noreferrer" download="Ghareeb Shehata CV">
-                                CHECK MY CV
-                            </a>
-                        </div> */}
+                        <p>Experienced in a set of skills, always trying to use them to build a valuable outputs.</p>
                     </div>
 
                     <div className="profileImg">

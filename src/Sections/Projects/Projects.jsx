@@ -1,42 +1,56 @@
 import React, { useRef, useEffect } from 'react'
 import "./Projects.scss"
 import { data } from "./projects-data"
-import Card from "../../Components/Project-Card/Card"
+import {ReactComponent as Link} from '../../Assets/Icons/link.svg'
+import {ReactComponent as Github} from '../../Assets/Icons/Social/github.svg'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Projects = ({setActiveSection}) => {
+const Projects = ({ setActiveSection }) => {
     gsap.registerPlugin(ScrollTrigger);
     const projectsSection = useRef(null)
-    useEffect(()=>{
+    const projectCard = useRef(null)
+
+    useEffect(() => {
         const element = projectsSection.current
 
         ScrollTrigger.create({
-            trigger : element,
+            trigger: element,
             start: "top center",
             end: "bottom center",
-            onEnter : ()=> setActiveSection("Projects"),
-            onEnterBack: ()=> setActiveSection("Projects"),
+            onEnter: () => setActiveSection("Projects"),
+            onEnterBack: () => setActiveSection("Projects"),
         })
 
-        gsap.fromTo(
-            element.querySelectorAll(".project-card"),
-            {
-                opacity: 0,
-                y: 40
-            },
-            {
-                scrollTrigger: {
-                    trigger: element.querySelectorAll(".project-card"),
-                    start : "top center",
-                    end: "top bottom"
+    }, [])
+
+    useEffect(() => {
+        const elements = document.querySelectorAll('.inner-container')
+
+        for(let i = 0; i<elements.length ; i++){
+            
+            gsap.fromTo(
+                elements[i],
+                {
+                    opacity: 0,
+                    y: 50
                 },
-                opacity: 1,
-                y: 0,
-                stagger: 0.2
-            }
-        )
-    },[])
+                {
+                    scrollTrigger:{
+                        trigger: elements[i],
+                        start: "top center",
+                        
+                    }, 
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4
+                }
+    )
+            
+        }
+
+    }, [])
+
     return (
         <div className="section projects-section" id="Projects" ref={projectsSection}>
             <div className="container">
@@ -47,16 +61,33 @@ const Projects = ({setActiveSection}) => {
                         <h5>Projects</h5>
                     </div>
                 </div>
+            </div>
 
-                <div className="projects-container">
-                    {data?.map((project, index) => (
-                        <Card
-                            key={index}
-                            data={project}
-                        />
+            <div className="projects-container">
+                {data?.map((project, index) => (
+                    <div className="project-container" key={index} ref={projectCard}>
+                        <div className="container inner-container">
+                            
+                            <div className="project-screen">
+                                <img src={project.screen} alt="project-screen" />
+                            </div>
 
-                    ))}
-                </div>
+                            <div className="project-details">
+                                <div className="project-title">
+                                    <h3>{project.name}</h3>
+                                </div>
+                                <div className="project-description">
+                                    <p>{project.description}</p>
+                                </div>
+                                <div className="actions-btn">
+                                    <a href={project.demo_link} className="demo" target="_blank" rel='noreferrer'><Link className='icon'/>Demo</a>
+                                    <a href={project.repo_link} className="outlined repo" target="_blank" rel='noreferrer'><Github className='icon'/>Repo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                ))}
             </div>
         </div>
     )

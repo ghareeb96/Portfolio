@@ -86,34 +86,6 @@ svg {
     width: 100%;
     position: relative;
 
-    .shapes {
-        height: 70%;
-        position: absolute;
-        top: calc(100vh);
-        z-index: -1;
-
-        .dots-icon, .circle {
-            position: absolute;
-
-            @for $i from 1 through 20 {
-                &:nth-child(#{$i}) {
-                    left: generateRandom(0, 1200);
-                    width: generateRandom(50, 120);
-                    top: generateRandom(($i - 1)*150, $i*150);
-                    opacity: random(3) * 0.1;
-
-                }
-
-            }
-
-            height: auto;
-        }
-        .circle{
-            background-color: $accent-color;
-            fill: $accent-color;
-            border-radius: 50%;
-        }
-    }
 }
 
 
@@ -127,7 +99,9 @@ svg {
 .section {
     width: 100vw;
     padding: 80px 0;
-
+    &:nth-child(2n) {
+        background-color: rgba(243, 243, 243, 0.425);
+    }
 
 }
 
@@ -203,63 +177,8 @@ svg {
     .container{
         width: 90%;
     }
-    .app {
-        .shapes {               
-            .dots-icon, .circle {
-                @for $i from 1 through 20 {
-                    &:nth-child(#{$i}) {
-                        left: generateRandom(0, 900);
-                        width: generateRandom(50, 100);
-                        top: generateRandom(($i - 1)*250, $i*250)
-                    }
     
-                }
-
-            }
-    
-        }
-    }
     
 }
-@media screen and (max-width: $smallScreen) {
-
-    .app {
-        .shapes {               
-            .dots-icon, .circle {
-                @for $i from 1 through 20 {
-                    &:nth-child(#{$i}) {
-                        left: generateRandom(0, 650);
-                        top: generateRandom(($i - 1)*300, $i*300)
-
-                    }
-    
-                }
-
-            }
-    
-        }
-    }
-
-}
-
-@media screen and (max-width: $xSmallScreen) {
 
 
-    .app {
-        .shapes {               
-            .dots-icon, .circle {
-                @for $i from 1 through 20 {
-                    &:nth-child(#{$i}) {
-                        left: generateRandom(0, 350);
-                        top: generateRandom(($i - 1)*350, $i*350)
-
-                    }
-    
-                }
-
-            }
-    
-        }
-    }
-
-}

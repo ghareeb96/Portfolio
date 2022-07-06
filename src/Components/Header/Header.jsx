@@ -41,7 +41,6 @@ const Nav = ({ activeSection }) => {
                             <li className="nav-link" id="About-link"><a href="#About">About</a></li>
                             <li className="nav-link" id="Services-link"><a href="#Services">Services</a></li>
                             <li className="nav-link" id="Skills-link"><a href="#Skills">Skills</a></li>
-                            <li className="nav-link" id="Experience-link"><a href="#Experience">Experience</a></li>
                             <li className="nav-link" id="Projects-link"><a href="#Projects">Projects</a></li>
                             <li className="nav-link" id="Contact-link"><a href="#Contact">Contact</a></li>
 

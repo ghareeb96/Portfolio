@@ -1,9 +1,72 @@
 @import '../../App.scss';
 
+@keyframes showModal {
+    from {
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 .contact-section {
-    position : relative;
+    position: relative;
     min-height: 100vh;
+
     .container {
+
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.253);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease-out;
+
+            .modal-content {
+                background-color: #e6fadd;
+                width: 80%;
+                max-width: 600px;
+                z-index: 3;
+                text-align: center;
+                padding: 40px 20px;
+
+                .icon {
+                    fill: #368d0e;
+                    margin-bottom: 20px;
+                }
+
+                h3 {
+                    color: #368d0e;
+                    margin-bottom: 20px;
+                }
+
+                h5 {
+                    color: #368d0e;
+                    line-height: 1.5;
+                }
+
+            }
+
+            &.active {
+                opacity: 1;
+
+                .modal-content {
+                    animation: showModal 0.4s;
+                }
+
+            }
+
+        }
+
         .contact-details {
             display: flex;
             flex-direction: row;
@@ -17,6 +80,7 @@
                 flex-direction: column;
                 width: 400px;
                 justify-content: space-between;
+
                 .contact-option {
                     display: flex;
                     flex-direction: row;
@@ -80,18 +144,18 @@
                         h6 {
                             font-size: 0.8rem;
                             margin-bottom: 8px;
-                            color : #333;
+                            color: #333;
                         }
 
                         input {
                             font-size: 1rem;
                             padding: 0.6rem;
                             margin-bottom: 1rem;
-                            border : 1px solid #bbb;
+                            border: 1px solid #bbb;
                         }
-                        
+
                         textarea {
-                            border : 1px solid #bbb;
+                            border: 1px solid #bbb;
                             resize: none;
                             width: 100%;
                             font-family: "Raleway";
@@ -101,67 +165,78 @@
                             margin-bottom: 1rem;
                             letter-spacing: 1px;
                         }
-                        
-                        input,textarea{
-                            &:focus{
-                                border : 1px solid #333;
-                                outline : none;
-                                
+
+                        input,
+                        textarea {
+                            &:focus {
+                                border: 1px solid #333;
+                                outline: none;
+
                             }
                         }
                     }
 
                     button {
-                        width: 100%;
-                        font-size: 1.2rem;
+                        font-size: 1rem;
                         background: $action-color;
                         color: white;
                         font-weight: 700;
                         letter-spacing: 1px;
                         border: none;
                         outline: none;
-                        padding: 0.4rem;
+                        padding: 0.6rem 1.6rem;
+                        margin-left: auto;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+
+                        .icon {
+                            margin-right: 10px;
+                            width: 15px;
+                            height: 15px;
+                        }
                     }
                 }
             }
         }
     }
-    .copyrights{
-        position : absolute;
-        bottom: 0;
-        width : 100%;
-        text-align : center;
-        padding : 0.6rem;
-        background: #141414;
-        margin-top : 50px;
 
-        h6{
-            color : white;
+    .copyrights {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0.6rem;
+        background: #141414;
+        margin-top: 50px;
+
+        h6 {
+            color: white;
             font-weight: 500;
-            font-size : 0.8rem;
+            font-size: 0.8rem;
         }
     }
 }
 
 
 @media screen and(max-width: $mediumScreen) {
-    .contact-section{
-        .container{
-            .contact-details{
+    .contact-section {
+        .container {
+            .contact-details {
                 flex-direction: column-reverse;
 
-                .contact-info{
+                .contact-info {
                     margin-bottom: 3rem;
                     width: 100%;
 
-                    .social-links{
+                    .social-links {
                         margin: 0 auto;
                     }
                 }
 
             }
 
-            .email-me{
+            .email-me {
                 width: 100%;
                 margin-bottom: 4rem;
             }
@@ -170,9 +245,36 @@
 }
 
 @media screen and(max-width: $xSmallScreen) {
-    .contact-option{
-        h6{
+    .contact-option {
+        h6 {
             font-size: 1rem;
+        }
+    }
+
+    .contact-section {
+
+        .container {
+
+
+            .password-modal {
+
+                .modal-content {
+                    width: 90%;
+                    padding: 40px 10px;
+
+                    h3 {
+                        font-size: 2rem;
+                    }
+
+                    h5 {
+                        font-size: 1.2rem;
+                    }
+
+                }
+            }
+
+
+
         }
     }
 }

@@ -8,15 +8,26 @@ import { ReactComponent as Facebook } from "../../Assets/Icons/Social/facebook.s
 import { ReactComponent as Twitter } from "../../Assets/Icons/Social/twitter.svg"
 import { ReactComponent as Github } from "../../Assets/Icons/Social/github.svg"
 import { ReactComponent as Linkedin } from "../../Assets/Icons/Social/linkedin.svg"
+import { ReactComponent as Send } from "./Send.svg"
+import { ReactComponent as MessageSent } from "./Message-sent.svg"
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Contact = ({setActiveSection}) => {
+const Contact = ({ setActiveSection }) => {
     gsap.registerPlugin(ScrollTrigger);
     const contactSection = useRef(null)
     const initialData = { sender: '', email: '', message: '' }
     const [formData, setFormData] = useState(initialData)
 
+    const messageSent = () => {
+        document.querySelector('.password-modal').classList.add('active')
+        setTimeout(()=> document.querySelector('.password-modal').classList.remove('active'), 3000)
+        setFormData(initialData)
+    }
+
+    const messageFailed = () => {
+        alert('Something went wrong')
+    }
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -24,27 +35,40 @@ const Contact = ({setActiveSection}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if (formData.sender && formData.email.includes('@') && formData.message) {
-            const { data } = await axios.post('http://localhost:5000/', formData)
-            console.log(data)
+        if (formData.sender && formData.email && formData.message) {
+            const { status } = await axios.post('https://ghareeb-portfolio.herokuapp.com/', formData)
+            status === 201 ?
+                messageSent()
+                :
+                messageFailed()
+
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const element = contactSection.current
 
         ScrollTrigger.create({
-            trigger : element,
+            trigger: element,
             start: "top center",
             end: "bottom center",
-            onEnter : ()=> setActiveSection("Contact"),
-            onEnterBack: ()=> setActiveSection("Contact"),
+            onEnter: () => setActiveSection("Contact"),
+            onEnterBack: () => setActiveSection("Contact"),
         })
-    },[])
+    }, [])
 
     return (
         <div className="section contact-section" id="Contact" ref={contactSection}>
             <div className="container">
+
+                <div className="password-modal">
+                    <div className="modal-content">
+                        <MessageSent className='icon' />
+                        <h3>Thank You</h3>
+                        <h5>Your message has been received</h5>
+                    </div>
+                </div>
+
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
@@ -56,7 +80,7 @@ const Contact = ({setActiveSection}) => {
                     <div className="contact-info">
                         <div className="contact-option">
                             <Address className='icon' />
-                            <h6>El-Salam city, Cairo, Egypt</h6>
+                            <h6>Cairo, Egypt</h6>
                         </div>
                         <div className="contact-option">
                             <Email className='icon' />
@@ -90,9 +114,7 @@ const Contact = ({setActiveSection}) => {
                                     <h6>Message</h6>
                                     <textarea rows="6" name="message" value={formData.message} onChange={handleChange} required />
                                 </div>
-                                <div className="btn submit-btn">
-                                    <button type="submit" onClick={handleSubmit}>Send Message</button>
-                                </div>
+                                <button type="submit" onClick={handleSubmit}><Send className='icon send-icon' />Send</button>
                             </form>
                         </div>
                     </div>
