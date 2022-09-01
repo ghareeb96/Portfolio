@@ -2,6 +2,7 @@ import keeper from './Keeper.png';
 import AMDb from './AMDb.png';
 import Weather from './Weather.png';
 import Netflix from './Netflix.png';
+import Quiz from './Quiz.png';
 
 export const data = [{
         name: "Keeper",
@@ -24,7 +25,13 @@ export const data = [{
         screen: AMDb,
         description: 'Implemented by React.js library with additional packages and libraries to discover more about Movies & TV Shows.'
     },
-    
+    {
+        name: "Quiz App",
+        repo_link: "https://github.com/ghareeb96/Quiz-App",
+        demo_link: "https://ghareeb96.github.io/Quiz-App",
+        screen: Quiz,
+        description: 'Quiz App used to practice the english parts of speech, Implemented using React.js & Node.js.'
+    },
     {
         name: "Netflix",
         repo_link: "https://github.com/ghareeb96/Netflix",
@@ -32,5 +39,4 @@ export const data = [{
         screen: Netflix,
         description: 'A Clone of Netflix Landing page Implemented using Jquery'
     },
-    
 ]

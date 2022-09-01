@@ -1,22 +1,14 @@
-@import '../../App.scss';
+@import "../../_vars.scss";
 
-@keyframes showModal {
-    from {
-        transform: scale(0.6);
-    }
 
-    to {
-        transform: scale(1);
-    }
-}
 
 .contact-section {
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
 
     .container {
 
-        .password-modal {
+        .message-modal {
             position: fixed;
             top: 0;
             left: 0;
@@ -78,20 +70,20 @@
 
                 display: flex;
                 flex-direction: column;
-                width: 400px;
+                width: 60%;
                 justify-content: space-between;
 
                 .contact-option {
                     display: flex;
                     flex-direction: row;
-                    margin-bottom: 50px;
+                    margin-bottom: 1rem;
                     align-items: center;
 
                     .icon {
-                        width: 30px;
-                        height: 30px;
+                        width: 2rem;
+                        height: 2rem;
                         fill: black;
-                        margin-right: 20px;
+                        margin-right: 1.4rem;
                     }
                 }
 
@@ -100,12 +92,12 @@
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-between;
-                    width: 300px;
+                    width: 50%;
 
                     a {
 
                         background: $action-color;
-                        padding: 10px;
+                        padding: .8rem;
                         border-radius: 50%;
                         display: flex;
                         align-items: center;
@@ -113,8 +105,8 @@
 
                         .icon {
                             fill: white;
-                            width: 25px;
-                            height: 25px;
+                            width: 1.5rem;
+                            height: 1.5rem;
                         }
 
                         &:hover {
@@ -126,7 +118,7 @@
         }
 
         .email-me {
-            width: 500px;
+            width: 40%;
 
             .form-container {
                 width: 100%;
@@ -141,16 +133,15 @@
                         flex-direction: column;
                         width: 100%;
 
-                        h6 {
-                            font-size: 0.8rem;
-                            margin-bottom: 8px;
-                            color: #333;
+                        h5 {
+                            margin-bottom: .4rem;
+                            color: rgb(66, 66, 66);
                         }
 
                         input {
                             font-size: 1rem;
-                            padding: 0.6rem;
-                            margin-bottom: 1rem;
+                            padding: .6rem;
+                            margin-bottom: 1.2rem;
                             border: 1px solid #bbb;
                         }
 
@@ -191,9 +182,9 @@
                         align-items: center;
 
                         .icon {
-                            margin-right: 10px;
-                            width: 15px;
-                            height: 15px;
+                            margin-right: .5rem;
+                            width: 1rem;
+                            height: 1rem;
                         }
                     }
                 }
@@ -213,7 +204,6 @@
         h6 {
             color: white;
             font-weight: 500;
-            font-size: 0.8rem;
         }
     }
 }
@@ -222,59 +212,86 @@
 @media screen and(max-width: $mediumScreen) {
     .contact-section {
         .container {
+
             .contact-details {
                 flex-direction: column-reverse;
+                width: 70%;
 
                 .contact-info {
                     margin-bottom: 3rem;
                     width: 100%;
 
+                    .contact-option{
+                        margin-bottom: 3rem;
+                    }
+
                     .social-links {
                         margin: 0 auto;
+                        width: 80%;
                     }
                 }
 
             }
 
             .email-me {
+                margin: 0 auto 4rem;
                 width: 100%;
-                margin-bottom: 4rem;
             }
         }
     }
 }
 
 @media screen and(max-width: $xSmallScreen) {
-    .contact-option {
-        h6 {
-            font-size: 1rem;
-        }
-    }
-
     .contact-section {
-
         .container {
 
+            .contact-details {
+                width: 100%;
 
-            .password-modal {
+                .contact-info {
 
-                .modal-content {
-                    width: 90%;
-                    padding: 40px 10px;
-
-                    h3 {
-                        font-size: 2rem;
+                    .contact-option{
+                        margin-bottom: 3rem;
+                        font-size: .8rem;
                     }
 
-                    h5 {
-                        font-size: 1.2rem;
+                    .social-links {
+                        width: 100%;
                     }
-
                 }
+
             }
 
-
-
+            .email-me {
+                margin: 0 auto 4rem;
+                width: 100%;
+            }
         }
+        .message-modal {
+
+            .modal-content {
+                width: 90%;
+                padding: 40px 10px;
+
+                h3 {
+                    font-size: 2rem;
+                }
+
+                h5 {
+                    font-size: 1.2rem;
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes showModal {
+    from {
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
     }
 }

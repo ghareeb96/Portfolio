@@ -32,7 +32,7 @@ const Nav = ({ activeSection }) => {
 
 
                 <div className="logo">
-                    <h2>GHAREEB</h2>
+                    <h1>GHAREEB</h1>
                 </div>
                 <nav className="navbar" onClick={closeSidebar}>
 

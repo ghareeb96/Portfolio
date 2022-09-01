@@ -20,8 +20,8 @@ const Contact = ({ setActiveSection }) => {
     const [formData, setFormData] = useState(initialData)
 
     const messageSent = () => {
-        document.querySelector('.password-modal').classList.add('active')
-        setTimeout(()=> document.querySelector('.password-modal').classList.remove('active'), 3000)
+        document.querySelector('.message-modal').classList.add('active')
+        setTimeout(()=> document.querySelector('.message-modal').classList.remove('active'), 3000)
         setFormData(initialData)
     }
 
@@ -61,7 +61,7 @@ const Contact = ({ setActiveSection }) => {
         <div className="section contact-section" id="Contact" ref={contactSection}>
             <div className="container">
 
-                <div className="password-modal">
+                <div className="message-modal">
                     <div className="modal-content">
                         <MessageSent className='icon' />
                         <h3>Thank You</h3>
@@ -72,7 +72,7 @@ const Contact = ({ setActiveSection }) => {
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>Get in Touch</h5>
+                        <h2>Get in Touch</h2>
                     </div>
                 </div>
 
@@ -80,15 +80,15 @@ const Contact = ({ setActiveSection }) => {
                     <div className="contact-info">
                         <div className="contact-option">
                             <Address className='icon' />
-                            <h6>Cairo, Egypt</h6>
+                            <h3>Cairo, Egypt</h3>
                         </div>
                         <div className="contact-option">
                             <Email className='icon' />
-                            <h6>ghareeb_shehata@outlook.com</h6>
+                            <h3>ghareeb_shehata@outlook.com</h3>
                         </div>
                         <div className="contact-option">
                             <Phone className='icon' />
-                            <h6>+201012016913 , +201554886913</h6>
+                            <h3>+201012016913 , +201554886913</h3>
                         </div>
 
                         <div className="social-links">
@@ -103,15 +103,15 @@ const Contact = ({ setActiveSection }) => {
                         <div className="form-container">
                             <form>
                                 <div className="form-input">
-                                    <h6>Name</h6>
+                                    <h5>Name</h5>
                                     <input type="text" name="sender" value={formData.sender} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
-                                    <h6>Email</h6>
+                                    <h5>Email</h5>
                                     <input type="email" name="email" value={formData.email} onChange={handleChange} required />
                                 </div>
                                 <div className="form-input">
-                                    <h6>Message</h6>
+                                    <h5>Message</h5>
                                     <textarea rows="6" name="message" value={formData.message} onChange={handleChange} required />
                                 </div>
                                 <button type="submit" onClick={handleSubmit}><Send className='icon send-icon' />Send</button>

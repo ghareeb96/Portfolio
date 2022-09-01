@@ -38,7 +38,7 @@ const Projects = ({ setActiveSection }) => {
                 {
                     scrollTrigger:{
                         trigger: elements[i],
-                        start: "top center",
+                        start: "top 75%",
                         
                     }, 
                     y: 0,
@@ -58,7 +58,7 @@ const Projects = ({ setActiveSection }) => {
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>Projects</h5>
+                        <h2>Projects</h2>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@ const Projects = ({ setActiveSection }) => {
 
                             <div className="project-details">
                                 <div className="project-title">
-                                    <h3>{project.name}</h3>
+                                    <h2>{project.name}</h2>
                                 </div>
                                 <div className="project-description">
                                     <p>{project.description}</p>

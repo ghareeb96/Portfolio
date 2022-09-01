@@ -1,4 +1,4 @@
-@import "../../app.scss";
+@import "../../_vars.scss";
 
 .services-section {
     width: 100%;
@@ -10,11 +10,13 @@
         
         .cards-container {
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            justify-items: center;
-            grid-gap: 2.5rem 1rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
 
         }
     }
 }
+
+

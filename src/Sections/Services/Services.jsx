@@ -59,7 +59,7 @@ const Services = ({setActiveSection}) => {
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>What can i do</h5>
+                        <h2>What can i do</h2>
                     </div>
                 </div>
 

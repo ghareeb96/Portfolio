@@ -49,15 +49,11 @@ const Skills = ({ setActiveSection }) => {
 
     return (
         <div className="section skills-section" id="Skills" ref={skillsSection}>
-            <div className="bg"></div>
-            {/* <div className="bg-overlay"></div> */}
             <div className="container">
-
-
                 <div className="headline">
                     <div className="left-line"></div>
                     <div className="headline-typo">
-                        <h5>Technical Skills</h5>
+                        <h2>Technical Skills</h2>
                     </div>
                 </div>
 

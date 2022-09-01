@@ -1,68 +1,85 @@
-@import "../../app.scss";
+@import "../../_vars.scss";
 
-.service-card {
-    width: $service-card-width;
-    height: 300px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 0 6px;
+.card-container {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
     transition: all 0.2s ease-out;
-    z-index: 2 !important;
-    
 
 
-    .icon-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 14px;
+    .service-card {
+        height: 100%;
+        width: 90%;
+        background-color: white;
+        padding: 2.4rem 1.2rem;
+        box-shadow: 0 0 8px rgb(175, 175, 175);
+        transition: all 0.2s ease-out;
+        z-index: 2 !important;
 
-        .icon {
-            transition: all 0.2s ease-out;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
+
+
+        .icon-container {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 1rem;
 
-            svg {
-                width: 50px;
-                height: 50px;
-                fill: black;
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3rem;
+                height: 3rem;
+
+                svg {
+                    width: 3rem;
+                    height: auto;
+                    fill: black;
+                }
+            }
+
+        }
+
+        .title {
+            margin-bottom: 1rem;
+
+            h4 {
+                text-align: center;
+                font-weight: 700;
+                color: $accent-color;
             }
         }
 
-    }
-
-    .title {
-        margin-bottom: 20px;
-
-        h6 {
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 700;
-            color: $accent-color;
+        .desc {
+            p {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                text-align: center;
+            }
         }
-    }
 
-    .desc {
-        p {
-            font-size: 1.1rem;
-            line-height: 1.8rem;
-            text-align: center;
-        }
+
+
     }
 
     &:hover {
         transform: scale(1.1);
+    }
+}
 
-        .icon-container {
-            .icon {
-                background: rgba($action-color, 0.1);
-            }
+@media screen and (max-width: $mediumScreen) {
+
+    .card-container {
+        width: 260px;
+        height: 320px;
+
+
+        .service-card {
+            height: 90%;
+            width: 90%;
+
         }
     }
-
 }

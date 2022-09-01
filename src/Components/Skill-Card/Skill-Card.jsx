@@ -25,16 +25,15 @@ const SkillCard = ({ data }) => {
             <div className="icon" id={data.id}></div>
             <div className="title-bar">
                 <div className="title">
-                    <h6>
+                    <h4>
                         {data.title}
-                    </h6>
+                    </h4>
 
                 </div>
                 <div className="progress-bar">
                     <div className="progress-container">
                         <div className="progress-inner" style={{width: data.rate +"%"}}></div>
                     </div>
-                    {/* <LinearProgressWithLabel value={data.rate} /> */}
                 </div>
 
             </div>

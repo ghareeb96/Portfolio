@@ -70,8 +70,8 @@ const About = ({ setActiveSection }) => {
             <div className="container">
                 <div className="about-content">
                     <div className="grid-1">
-                        <h4 ref={hello} >Hello Friend </h4>
-                        <h4 ref={def}>I am <span>Ghareeb Shehata</span></h4>
+                        <h1 ref={hello} >Hello Friend </h1>
+                        <h1 ref={def}>I am <span>Ghareeb Shehata</span></h1>
                     </div>
                     <div ref={paragraph} className="grid-2" >
                         <p>Frontend web developer, Designing and developing a nice-looking and efficient Projects.

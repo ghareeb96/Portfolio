@@ -17,25 +17,27 @@ const Card = ({ data }) => {
 
             appendElement(data.icon, data.id)
         }
-    },[])
+    }, [])
 
 
     return (
-        <div className="service-card">
-            <div className="icon-container">
-                <div className="icon" id={data.id}>
+        <div className="card-container">
+            <div className="service-card">
+                <div className="icon-container">
+                    <div className="icon" id={data.id}>
+                    </div>
                 </div>
-            </div>
-            <div className="title">
-                <h6>
-                    {data.title}
-                </h6>
-            </div>
+                <div className="title">
+                    <h4>
+                        {data.title}
+                    </h4>
+                </div>
 
-            <div className="desc">
-                <p>
-                    {data.desc}
-                </p>
+                <div className="desc">
+                    <p>
+                        {data.desc}
+                    </p>
+                </div>
             </div>
         </div>
     )
