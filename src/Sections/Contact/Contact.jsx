@@ -88,12 +88,12 @@ const Contact = ({ setActiveSection }) => {
                         </div>
                         <div className="contact-option">
                             <Phone className='icon' />
-                            <h3>+201012016913 , +201554886913</h3>
+                            <h3>+20 1012016913</h3>
                         </div>
 
                         <div className="social-links">
                             <a href="https://www.facebook.com/Ghaareeeb" target="_blank" rel="noreferrer"><Facebook className='icon' /></a>
-                            <a href="https://twitter.com/_urFavStranger" target="_blank" rel="noreferrer"><Twitter className='icon' /></a>
+                            <a href="https://twitter.com/strangerBgd" target="_blank" rel="noreferrer"><Twitter className='icon' /></a>
                             <a href="https://github.com/ghareeb96" target="_blank" rel="noreferrer"><Github className='icon' /></a>
                             <a href="https://www.linkedin.com/in/ghareeb-shehata" target="_blank" rel="noreferrer"><Linkedin className='icon' /></a>
                         </div>
